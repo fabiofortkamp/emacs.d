@@ -1,0 +1,9 @@
+*~
+auto/
+elpa/
+*DS_Store*
+._*
+eshell/
+ido.last
+eshell.sh
+bookmarks

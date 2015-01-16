@@ -68,6 +68,16 @@
     )
   )
 
+(add-to-list 'load-path "~/.emacs.d/deft/")
+(require 'deft)
+
+(setq deft-extension "md")
+(setq deft-directory "~/Dropbox/notes")
+(setq deft-text-mode 'markdown-mode)
+
+(global-set-key [f8] 'deft)
+(setq deft-use-filename-as-title t)
+
 ;---
 ;;loading ELPA packages
 (setq package-enable-at-startup nil)

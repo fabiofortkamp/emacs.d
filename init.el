@@ -5,6 +5,10 @@
 ; add init directory to load path
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
+(prefer-coding-system 'utf-8)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
+
 ;disable tollbar
 (tool-bar-mode -1)
 

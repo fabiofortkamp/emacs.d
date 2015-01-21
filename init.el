@@ -53,24 +53,6 @@
 (global-set-key "\C-h" 'delete-backward-char)
 
 					; OS-specific
-(if (eq system-type 'darwin)
-    (exec-path-from-shell-initialize)
-  (if (eq system-type 'windows-nt)
-      (progn
-	(set-face-font 'default "InputMono")
-	;; Make sure that the bash executable can be found
-	(setq explicit-shell-file-name "C:/cygwin64/bin/bash.exe")
-	(setq shell-file-name explicit-shell-file-name)
-	(add-to-list 'exec-path "C:/cygwin64/bin")
-	(set-variable 'TeX-view-program-selection
-		      '((output-pdf "Sumatra")))
-	(setq ahk-syntax-directory "C:/Program Files (x86)/AutoHotkey/Extras/Editors/Syntax")
-	(add-to-list 'auto-mode-alist '("\\.ahk$" . ahk-mode))
-	(autoload 'ahk-mode "ahk-mode")
-
-	)
-    )
-  )
 
 (add-to-list 'load-path "~/.emacs.d/deft/")
 (require 'deft)
@@ -92,6 +74,26 @@
 (package-initialize)
 
 (load-theme 'solarized-light 1)
+
+(if (eq system-type 'darwin)
+    (exec-path-from-shell-initialize)
+  (if (eq system-type 'windows-nt)
+      (progn
+	(set-face-font 'default "InputMono")
+	;; Make sure that the bash executable can be found
+	(setq explicit-shell-file-name "C:/cygwin64/bin/bash.exe")
+	(setq shell-file-name explicit-shell-file-name)
+	(add-to-list 'exec-path "C:/cygwin64/bin")
+	(set-variable 'TeX-view-program-selection
+		      '((output-pdf "Sumatra")))
+	(setq ahk-syntax-directory "C:/Program Files (x86)/AutoHotkey/Extras/Editors/Syntax")
+	(add-to-list 'auto-mode-alist '("\\.ahk$" . ahk-mode))
+	(autoload 'ahk-mode "ahk-mode")
+
+	)
+    )
+  )
+
 
 (require 'org)
 
@@ -158,11 +160,6 @@
 (require 'pandoc-mode)
 
 (add-hook 'markdown-mode-hook 'turn-on-pandoc)
-
-;(exec-path-from-shell-initialize)
-
-(require 'multi-term)
-(global-set-key (kbd "<f5>") 'multi-term)
 
 (require 'bookmark+)
 

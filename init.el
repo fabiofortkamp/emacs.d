@@ -63,7 +63,11 @@
 	(setq shell-file-name explicit-shell-file-name)
 	(add-to-list 'exec-path "C:/cygwin64/bin")
 	(set-variable 'TeX-view-program-selection
-	      '((output-pdf "Sumatra")))
+		      '((output-pdf "Sumatra")))
+	(setq ahk-syntax-directory "C:/Program Files (x86)/AutoHotkey/Extras/Editors/Syntax")
+	(add-to-list 'auto-mode-alist '("\\.ahk$" . ahk-mode))
+	(autoload 'ahk-mode "ahk-mode")
+
 	)
     )
   )
@@ -77,6 +81,7 @@
 
 (global-set-key [f8] 'deft)
 (setq deft-use-filename-as-title t)
+
 
 ;---
 ;;loading ELPA packages

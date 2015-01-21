@@ -75,12 +75,15 @@
 (add-to-list 'load-path "~/.emacs.d/deft/")
 (require 'deft)
 
-(setq deft-extension "md")
+(setq deft-extensions '("txt" "org" "taskpaper" "md"))
+(setq deft-default-extension "md")
 (setq deft-directory "~/Dropbox/notes")
 (setq deft-text-mode 'markdown-mode)
-
 (global-set-key [f8] 'deft)
 (setq deft-use-filename-as-title t)
+
+(eval-after-load "deft"
+'(define-key deft-mode-map (kbd "\C-c j") 'deft-new-file-named))
 
 
 ;---

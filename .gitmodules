@@ -3,4 +3,4 @@
 	url = git://jblevins.org/git/markdown-mode.git
 [submodule "deft"]
 	path = deft
-	url = git://jblevins.org/git/deft.git
+url=https://github.com/cpbotha/deft-turbo

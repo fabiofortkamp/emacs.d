@@ -5,8 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(TeX-view-program-list
    (quote
-    (("Preview" "open %o -a \"Skim.app\"")
-     ("Sumatra" "SumatraPDF.exe %o"))))
+    (("Skim" "open %o -a \"Skim.app\"")
+     ("Sumatra" "SumatraPDF.exe %o")
+     ("Preview" "open %o -a Preview"))))
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(comment-empty-lines t)
  '(custom-safe-themes

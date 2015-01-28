@@ -76,7 +76,11 @@
 (load-theme 'solarized-light 1)
 
 (if (eq system-type 'darwin)
-    (exec-path-from-shell-initialize)
+    (progn
+      (exec-path-from-shell-initialize)
+      (set-variable 'TeX-view-program-selection
+		      '((output-pdf "Preview")))
+      )
   (if (eq system-type 'windows-nt)
       (progn
 	(set-face-font 'default "InputMono")
@@ -119,6 +123,10 @@
 ;; some nice AUCTEX configurations
 ;; source: http://www.stefanom.org/setting-up-a-nice-auctex-environment-on-mac-os-x/
 ;; AucTeX
+
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)

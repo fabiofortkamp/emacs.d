@@ -3,7 +3,7 @@
 This is Thermo Emacs, an Emacs configuration created by a researcher in Thermodynamics and Thermal Science, hence the name. I really love Thermodynamics and I seem to be branding my code projects around this name, but this really represents an Emacs configuration for a doctorate student, someone who:
 
 - write LaTeX files
-- write lots of notes in Markdown format, emulating the [[http://brettterpstra.com/projects/nvalt/][nvAlt]] application (on OS X)
+- write lots of notes in Markdown format, emulating the [nvAlt](http://brettterpstra.com/projects/nvalt/) application (on OS X)
 - write Python scripts, both for system scription and numerical calculations
 
 ## Installations

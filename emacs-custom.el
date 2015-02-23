@@ -49,7 +49,8 @@
    (quote
     (("Skim" "open %o -a \"Skim.app\"")
      ("Sumatra" "SumatraPDF.exe %o")
-     ("Preview" "open %o -a Preview"))))
+     ("Preview" "open %o -a Preview")
+     ("PDF-XChange" "PDFXCview.exe %o"))))
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(comment-empty-lines t)
  '(custom-safe-themes

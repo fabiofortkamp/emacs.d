@@ -1,10 +1,34 @@
 ;; Thermo Emacs
 
-; this Org-mode implemenation was largely inspired by  Kieran Healy's Emacs Starter Kit
-; https://github.com/kjhealy/emacs-starter-kit
+;; this Org-mode implemenation was largely inspired by  Kieran Healy's Emacs Starter Kit
+;;     https://github.com/kjhealy/emacs-starter-kit
+;;
+;; and follows the general template described in the Org Babel introduction
+;;    http://orgmode.org/worg/org-contrib/babel/intro.html
 
-; set the Emacs directory programatically
-(setq thermo-emacs-dir (file-name-directory (or (buffer-file-name) load-file-name)))
+;;; init.el --- Where all the magic begins
+;;
+;; This file loads Org-mode and then loads the rest of our Emacs initialization from Emacs lisp
+;; embedded in literate Org-mode files.
 
-; load the basic babel file
-(org-babel-load-file (expand-file-name "thermo-emacs.org" thermo-emacs-dir))
+;; Load up Org Mode and (now included) Org Babel for elisp embedded in Org Mode files
+(setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
+
+(let* ((org-dir (expand-file-name
+                 "lisp" (expand-file-name
+                         "org" (expand-file-name
+                                "src" dotfiles-dir))))
+       (org-contrib-dir (expand-file-name
+                         "lisp" (expand-file-name
+                                 "contrib" (expand-file-name
+                                            ".." org-dir))))
+       (load-path (append (list org-dir org-contrib-dir)
+                          (or load-path nil))))
+  ;; load up Org-mode and Org-babel
+  (require 'org-install)
+  (require 'ob-tangle))
+
+;; load up all literate org-mode files in this directory
+(mapc #'org-babel-load-file (directory-files dotfiles-dir t "\\.org$"))
+
+;;; init.el ends here

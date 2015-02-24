@@ -5,7 +5,7 @@ This is Thermo Emacs, an Emacs configuration created by a researcher in Thermody
 - write LaTeX files
 - write lots of notes in Markdown format, emulating the [[http://brettterpstra.com/projects/nvalt/][nvAlt]] application (on OS X)
 - write Python scripts, both for system scription and numerical calculations
-
+  
 * Configuration
 
 ** General settings
@@ -15,11 +15,11 @@ This is my previous configuration, that I have to organized in an literate progr
 
 #+BEGIN_SRC emacs-lisp
 ;specifify the custom file
-(setq custom-file (expand-file-name "emacs-custom.el" thermo-emacs-dir))
+(setq custom-file (expand-file-name "emacs-custom.el" dotfiles-dir))
 (load custom-file)
 
 ; add init directory to load path
-(add-to-list 'load-path (expand-file-name "lisp" thermo-emacs-dir))
+(add-to-list 'load-path (expand-file-name "lisp" dotfiles-dir))
 
 (prefer-coding-system 'utf-8)
 (setq coding-system-for-read 'utf-8)

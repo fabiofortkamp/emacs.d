@@ -1,10 +1,10 @@
 
 ;specifify the custom file
-(setq custom-file (expand-file-name "emacs-custom.el" thermo-emacs-dir))
+(setq custom-file (expand-file-name "emacs-custom.el" dotfiles-dir))
 (load custom-file)
 
 ; add init directory to load path
-(add-to-list 'load-path (expand-file-name "lisp" thermo-emacs-dir))
+(add-to-list 'load-path (expand-file-name "lisp" dotfiles-dir))
 
 (prefer-coding-system 'utf-8)
 (setq coding-system-for-read 'utf-8)

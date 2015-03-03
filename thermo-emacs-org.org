@@ -1,0 +1,27 @@
+* Org mode configurations
+
+Load it.
+
+#+BEGIN_SRC emacs-lisp
+(require 'org)
+#+END_SRC
+
+Make RefTeX work with Org-Mode; use 'C-c (' instead of 'C-c [' because the latter is already defined in orgmode to the add-to-agenda command. This is explained in [[http://orgmode.org/worg/org-faq.html#using-reftex-in-org-mode][this article]].
+
+#+BEGIN_SRC emacs-lisp
+(defun org-mode-reftex-setup ()
+  (load-library "reftex") 
+  (and (buffer-file-name)
+  (file-exists-p (buffer-file-name))
+  (reftex-parse-all))
+  (define-key org-mode-map (kbd "C-c (") 'reftex-citation))
+
+(add-hook 'org-mode-hook 'org-mode-reftex-setup)
+#+END_SRC
+
+We also enable the org-mode markdown exporter.
+
+#+BEGIN_SRC 
+(eval-after-load "org"
+  '(require 'ox-md nil t))
+#+END_SRC

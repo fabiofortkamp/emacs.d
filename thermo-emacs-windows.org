@@ -1,0 +1,21 @@
+* Windows configurations
+
+Set a nicer default font, [[http://input.fontbureau.com/][found here]]
+
+#+BEGIN_SRC emacs-lisp
+(set-face-font 'default "InputMono")
+#+END_SRC
+
+Set the default PDF viewer for AUCTeX:
+
+#+BEGIN_SRC emacs-lisp
+(set-variable 'TeX-view-program-selection
+		      '((output-pdf "PDF-XChange")))
+#+END_SRC
+
+Load Autohotkey mode
+#+BEGIN_SRC emacs-lisp
+(setq ahk-syntax-directory "C:/Program Files (x86)/AutoHotkey/Extras/Editors/Syntax")
+(add-to-list 'auto-mode-alist '("\\.ahk$" . ahk-mode))
+(autoload 'ahk-mode "ahk-mode")
+#+END_SRC

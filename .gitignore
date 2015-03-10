@@ -3,7 +3,7 @@ auto/
 elpa/
 *DS_Store*
 ._*
-thermo-emacs-*.el
+thermo-emacs*.el
 eshell/
 ido.last
 eshell.sh

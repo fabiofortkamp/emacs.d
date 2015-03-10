@@ -58,6 +58,12 @@ I also like visual-line mode. In this way, when a line is too long, Emacs breaks
 
 Load my favorite theme
 
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'custom-theme-load-path (expand-file-name  "emacs-color-theme-solarized" dotfiles-dir))
+  (load-theme 'solarized t)
+
+#+END_SRC
+
 ** Ido mode
 
 Ido is a really nice mode, but I'm just scratching the surface. So here I just enable it.

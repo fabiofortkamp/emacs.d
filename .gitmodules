@@ -4,3 +4,6 @@
 [submodule "deft"]
 	path = deft
 url=https://github.com/cpbotha/deft-turbo
+[submodule "auctex-latexmk"]
+	path = auctex-latexmk
+	url = https://github.com/tom-tan/auctex-latexmk.git

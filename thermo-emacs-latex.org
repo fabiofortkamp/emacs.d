@@ -36,6 +36,14 @@ I load reftex, enanbling it in all LaTeX modes and in markdown mode too.
 (add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
 #+END_SRC
 
+Configure latexmk support:
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path (expand-file-name "auctex-latexmk" dotfiles-dir))
+(require 'auctex-latexmk)
+(auctex-latexmk-setup)
+#+END_SRC
+
 ** docTeX
 
 Lately I've been writing some ~.dtx~ files, and I'm learning to use AUCTeX's default docTeX-mode. Here is set a keyboard shorcut to automatically add a new commented line (so no need to press enter and then the comment character)

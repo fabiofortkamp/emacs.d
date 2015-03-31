@@ -37,6 +37,13 @@ We specifiy ~utf-8~ everywhere for our encoding.
 (setq coding-system-for-write 'utf-8)
 #+END_SRC
 
+Start an Emacs server, if there is none running. This comes from [[http://jr0cket.co.uk/2012/10/using-emacs-24-server-on-mac-osx-for.html][this article]]. This facilitates automation, since there is always a running server, to which some Emacs functions can comunicate. 
+
+#+BEGIN_SRC emacs-lisp
+(load "server")
+(unless (server-running-p) (server-start))
+#+END_SRC
+
 ** UI settings
 
 Disable the useless toolbar.

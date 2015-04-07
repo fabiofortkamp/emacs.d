@@ -47,7 +47,7 @@
      ("Other" "" TeX-run-command t t :help "Run an arbitrary command"))))
  '(TeX-view-program-list
    (quote
-    (("Skim" "open %o -a \"Skim.app\"")
+    (("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b %n %o %b")
      ("Sumatra" "SumatraPDF.exe %o")
      ("Preview" "open %o -a Preview")
      ("PDF-XChange" "PDFXCview.exe %o"))))

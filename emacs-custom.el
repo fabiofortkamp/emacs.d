@@ -50,7 +50,8 @@
     (("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b %n %o %b")
      ("Sumatra" "SumatraPDF.exe %o")
      ("Preview" "open %o -a Preview")
-     ("PDF-XChange" "PDFXCview.exe %o"))))
+     ("PDF-XChange" "PDFXCview.exe %o")
+     ("Split-Skim" "osascript ~/code/splitskim/splitskim.applescript %n %o %b"))))
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(comment-empty-lines t)
  '(custom-safe-themes

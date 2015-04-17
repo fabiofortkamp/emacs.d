@@ -135,3 +135,9 @@ Load some OS-specific files:
       (org-babel-load-file (expand-file-name "thermo-emacs-windows.org" dotfiles-dir))
 )
 #+END_SRC
+
+Load the web/html configurations:
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-load-file (expand-file-name "thermo-emacs-web.org" dotfiles-dir))
+#+END_SRC

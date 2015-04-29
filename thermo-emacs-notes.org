@@ -20,12 +20,6 @@ Enable its math- mode:
 (markdown-enable-math)
 #+END_SRC
 
-Enable orgtbl-mode in markdown-mode:
-
-#+BEGIN_SRC emacs-lisp
-(add-hook 'markdown-mode-hook 'turn-on-orgtbl)
-#+END_SRC
-
 Now, configure deft mode. I use the "extended version", which enables multiple file extensions and modes. I use markdown as default.
 
 #+BEGIN_SRC emacs-lisp

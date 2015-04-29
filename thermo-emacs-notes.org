@@ -37,7 +37,7 @@ Now, configure deft mode. I use the "extended version", which enables multiple f
 This is a function that concatenates three deft functions. When executed, it will present the Deft buffer, clear the filter string, and query us what we want to search.
 
 #+BEGIN_SRC emacs-lisp
-  (defun ff-deft-search ()
+  (defun thermo-emacs-deft-search ()
     "Open the deft buffer, clear the seach string and prompt for a new search string in minibuffer"
     (interactive)
     (deft)
@@ -49,5 +49,5 @@ This is a function that concatenates three deft functions. When executed, it wil
 We now set a global keywork to this function. This is my preferred behaviour; when I invoke Deft, I want to search for new files, and not retain the filtered list.
 
 #+BEGIN_SRC emacs-lisp
-(global-set-key [f8] 'ff-deft-search)
+(global-set-key [f8] 'thermo-emacs-deft-search)
 #+END_SRC

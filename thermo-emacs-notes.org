@@ -20,6 +20,38 @@ Enable its math- mode:
 (markdown-enable-math)
 #+END_SRC
 
+I would like to use automatic list continuation; i.e. when I press enter on a list, it creates a new list item. First we need a function to detect if we are inside a list; I use a function from the markdown mode that returns a list containing some parameters (such as marker used, indentation etc), and /returns nil if point is not inside a list/.
+
+#+BEGIN_SRC emacs-lisp
+(defun thermo-emacs-markdown-inside-list-p ()
+      "Return t if point inside list item, nil if it is not."
+     (if (markdown-cur-list-item-bounds) t nil))
+#+END_SRC
+
+Now we are ready to define this general "enter" function:
+
+#+BEGIN_SRC emacs-lisp
+(defun thermo-emacs-markdown-enter-key ()
+      "If point is inside markdown list, insert new list item, otherwise handle RET according to value of markdown-indent-on-enter"
+      (interactive)
+      (if (thermo-emacs-markdown-inside-list-p)
+          (markdown-insert-list-item 1)
+        (if markdown-indent-on-enter (newline-and-indent) (newline))
+    ))
+#+END_SRC    
+
+Finally, we bind "RET" to this function.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'markdown-mode-hook
+                 (lambda ()
+                   (define-key markdown-mode-map (kbd "<return>")
+                               'thermo-emacs-markdown-enter-key)))
+
+
+
+#+END_SRC
+
 Now, configure deft mode. I use the "extended version", which enables multiple file extensions and modes. I use markdown as default.
 
 #+BEGIN_SRC emacs-lisp

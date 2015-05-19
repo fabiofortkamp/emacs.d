@@ -26,3 +26,9 @@ Disable dialog boxes on OS X, which are completely broke (see [[http://superuser
   (let ((use-dialog-box nil))
     ad-do-it))
 #+END_SRC
+
+TRAMP mode seems to be broken; on OS X, the ~$TMPDIR~ environment variable is set to a rather long path, which causes some trouble. So, to avoid some global issues by modifying this variable for the whole system, we set only to a standard unix path of ~/tmp~.
+
+#+BEGIN_SRC emacs-lisp
+(setenv "TMPDIR" "/tmp")
+#+END_SRC

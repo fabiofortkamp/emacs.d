@@ -20,6 +20,8 @@ Enable its math- mode:
 (markdown-enable-math)
 #+END_SRC
 
+* Modifying list continuation in Markdown mode
+
 I would like to use automatic list continuation; i.e. when I press enter on a list, it creates a new list item. First we need a function to detect if we are inside a list; I use a function from the markdown mode that returns a list containing some parameters (such as marker used, indentation etc), and /returns nil if point is not inside a list/.
 
 #+BEGIN_SRC emacs-lisp
@@ -51,6 +53,8 @@ Finally, we bind "RET" to this function.
 
 
 #+END_SRC
+
+* Configure deft mode
 
 Now, configure deft mode. I use the "extended version", which enables multiple file extensions and modes. I use markdown as default.
 

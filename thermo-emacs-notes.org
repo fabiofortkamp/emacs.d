@@ -87,3 +87,55 @@ We now set a global keywork to this function. This is my preferred behaviour; wh
 #+BEGIN_SRC emacs-lisp
 (global-set-key [f8] 'thermo-emacs-deft-search)
 #+END_SRC
+
+* Functions to create and access notes
+
+Let us define a function to prompt for a tile and create a new note.
+
+Define the function and make it interactive
+
+#+BEGIN_SRC emacs-lisp
+  (defun thermo-emacs-create-zettel ()
+    "Prompt for a note title and automatically creates one in `deft-directory', with a zettel ID appended to the file name, and `deft-default-extension' appended"
+    (interactive)
+#+END_SRC
+
+Now, store the name in a string, reading it from the minibuffer:
+#+BEGIN_SRC emacs-lisp
+  (let (zettel-title zettel-id zettel-file-name)
+    (setq zettel-title
+          (read-string "Note title: "))
+#+END_SRC
+
+Now, create the datestamp
+
+#+BEGIN_SRC emacs-lisp
+  (setq zettel-id (format-time-string "%Y%m%d%H%M%S"))
+#+END_SRC
+
+Build the complete file name:
+
+#+BEGIN_SRC emacs-lisp
+    (setq zettel-file-name 
+  (expand-file-name (concat zettel-id " " zettel-title "." deft-default-extension) deft-directory))
+#+END_SRC
+
+Finally, open the file
+
+#+BEGIN_SRC emacs-lisp
+  (find-file zettel-file-name)
+#+END_SRC
+
+Close the ~let~ and ~defun~ blocks
+#+BEGIN_SRC emacs-lisp
+))
+#+END_SRC
+
+Let us define a global key to use that function:
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key [f5] 'thermo-emacs-create-zettel)
+#+END_SRC
+
+
+Another useful function to have is, if the point is inside 

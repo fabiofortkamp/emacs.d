@@ -85,7 +85,7 @@ This is a function that concatenates three deft functions. When executed, it wil
 We now set a global keywork to this function. This is my preferred behaviour; when I invoke Deft, I want to search for new files, and not retain the filtered list.
 
 #+BEGIN_SRC emacs-lisp
-(global-set-key [f8] 'thermo-emacs-deft-search)
+(global-set-key (kbd "<f8>") 'thermo-emacs-deft-search)
 #+END_SRC
 
 * Functions to create and access notes
@@ -136,7 +136,7 @@ Close the ~let~ and ~defun~ blocks
 Let us define a global key to use that function:
 
 #+BEGIN_SRC emacs-lisp
-(global-set-key [f5] 'thermo-emacs-create-zettel)
+(global-set-key (kbd "<f5>") 'thermo-emacs-create-zettel)
 #+END_SRC
 
 

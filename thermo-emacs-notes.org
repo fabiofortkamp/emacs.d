@@ -92,6 +92,8 @@ We now set a global keywork to this function. This is my preferred behaviour; wh
 
 Let us define a function to prompt for a tile and create a new note.
 
+This workflow follows the [[http://zettelkasten.de][zettelkasten methodology]].
+
 Define the function and make it interactive
 
 #+BEGIN_SRC emacs-lisp
@@ -107,7 +109,7 @@ Now, store the name in a string, reading it from the minibuffer:
           (read-string "Note title: "))
 #+END_SRC
 
-Now, create the datestamp
+Now, create the datestamp the "zettel ID".
 
 #+BEGIN_SRC emacs-lisp
   (setq zettel-id (format-time-string "%Y%m%d%H%M%S"))
@@ -138,4 +140,58 @@ Let us define a global key to use that function:
 #+END_SRC
 
 
-Another useful function to have is, if the point is inside 
+Another useful function to have is, if the point is inside a zettel ID, open the associated note. Let us begin with an auxiliary function:
+
+#+BEGIN_SRC emacs-lisp
+  (defun thermo-emacs-open-zettel-from-id (zettel-id)
+    "Open the note associated with zettel-id; if there is none, displays an error message"
+    (if (not (numberp zettel-id))
+        (error "The provided zettel ID is not a number"))
+
+    (let (matched-files target-file)
+    
+#+END_SRC
+
+Fortunately, Emacs has a helpful function to list the files in a directory which matches a regex (~directory-files~).
+
+#+BEGIN_SRC emacs-lisp
+  (setq matched-files (directory-files deft-directory t (number-to-string zettel-id)))
+#+END_SRC
+
+If there is no matched files, quit
+
+#+BEGIN_SRC emacs-lisp
+  (if (not matched-files)
+      (error "Could not find any files matching this ID"))
+#+END_SRC
+
+
+In my tests, I found that files ended in '~' are included, so sometimes we have more than one match. At this point, we always pick the first match
+
+#+BEGIN_SRC emacs-lisp
+(setq target-file (nth 0 matched-files))
+#+END_SRC
+
+Finally, we find the file, and close the funcion.
+
+#+BEGIN_SRC emacs-lisp
+(find-file target-file)
+))
+
+#+END_SRC
+
+Next, we define an interface to that function, by calling the above function and reading the id at point:
+
+#+BEGIN_SRC emacs-lisp
+    (defun thermo-emacs-open-zettel-from-id-at-point ()
+        "Open the zettel (in `deft-directory') associated with ID at point"
+      (interactive)
+      (thermo-emacs-open-zettel-from-id (thing-at-point 'number))
+      )
+#+END_SRC
+
+In my system, my "notes" or "zettel" are markdown notes. So, to prevent conflicts, I define a keybing in markdown-mode to call this function.
+
+#+BEGIN_SRC emacs-lisp
+  (define-key markdown-mode-map (kbd "C-c f") 'thermo-emacs-open-zettel-from-id-at-point)
+#+END_SRC

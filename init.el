@@ -12,7 +12,9 @@
 ;; embedded in literate Org-mode files.
 
 ;; Load up Org Mode and (now included) Org Babel for elisp embedded in Org Mode files
-(setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
+(setq thermo-emacs-init-file (or (buffer-file-name) load-file-name))
+
+(setq dotfiles-dir (file-name-directory thermo-emacs-init-file))
 
 ;; load up Org-mode and Org-babel
 (require 'org-install)

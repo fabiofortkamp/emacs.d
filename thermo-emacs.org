@@ -141,3 +141,14 @@ Load the web/html configurations:
 #+BEGIN_SRC emacs-lisp
 (org-babel-load-file (expand-file-name "thermo-emacs-web.org" dotfiles-dir))
 #+END_SRC
+* Auxiliary functions
+
+Here is a function that reloads the init file.
+
+#+BEGIN_SRC emacs-lisp
+  (defun thermo-emacs-reload ()
+    "Reload the Emacs init file"
+    (interactive)
+    (load-file thermo-emacs-init-file))
+#+END_SRC
+

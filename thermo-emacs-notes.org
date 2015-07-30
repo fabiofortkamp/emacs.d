@@ -20,6 +20,14 @@ Enable its math- mode:
 (markdown-enable-math)
 #+END_SRC
 
+Enable taskpaper mode
+
+#+BEGIN_SRC emacs-lisp
+  (load-file  (expand-file-name  "taskpaper.el" (expand-file-name "tpemacs" dotfiles-dir)) )
+  (require 'taskpaper-mode)
+ (add-to-list 'auto-mode-alist '("\\.taskpaper\\'" . taskpaper-mode)) 
+#+END_SRC
+
 * Modifying list continuation in Markdown mode
 
 I would like to use automatic list continuation; i.e. when I press enter on a list, it creates a new list item. First we need a function to detect if we are inside a list; I use a function from the markdown mode that returns a list containing some parameters (such as marker used, indentation etc), and /returns nil if point is not inside a list/.
@@ -90,9 +98,12 @@ We now set a global keywork to this function. This is my preferred behaviour; wh
 
 * Functions to create and access notes
 
+** Create note
 Let us define a function to prompt for a tile and create a new note.
 
 This workflow follows the [[http://zettelkasten.de][zettelkasten methodology]].
+
+*** Function body (create note)
 
 Define the function and make it interactive
 
@@ -133,12 +144,17 @@ Close the ~let~ and ~defun~ blocks
 ))
 #+END_SRC
 
+*** Interface to function for creating zettels
+
 Let us define a global key to use that function:
 
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "<f5>") 'thermo-emacs-create-zettel)
 #+END_SRC
 
+** Open note at point
+
+*** Function body (open note at point)
 
 Another useful function to have is, if the point is inside a zettel ID, open the associated note. Let us begin with an auxiliary function:
 
@@ -180,6 +196,8 @@ Finally, we find the file, and close the funcion.
 
 #+END_SRC
 
+*** Interface for function to open note at point
+
 Next, we define an interface to that function, by calling the above function and reading the id at point:
 
 #+BEGIN_SRC emacs-lisp
@@ -195,3 +213,17 @@ In my system, my "notes" or "zettel" are markdown notes. So, to prevent conflict
 #+BEGIN_SRC emacs-lisp
   (define-key markdown-mode-map (kbd "C-c f") 'thermo-emacs-open-zettel-from-id-at-point)
 #+END_SRC
+
+** Insert zettel ID at point
+
+A third useful function to have is one that inserts a zettel ID. Suppose I'm writing a note, and I want to refer to a note that I am pretty sure I already wrote. I invoke this function (preferably via a keyboard shortcut), and Emacs opens a new window with a buffer containing the list of files in my notes directory. With an interface similar to deft mode, I can search for IDs or by text, and the list narrows to files matching that criteria. When I find the file I want, I press enter with the point at the file name, and Emacs then inserts the zettel ID at the point in the buffer where I invoked the function.
+
+*** Function body (insert zettel ID at point)
+
+First of all, we save the windows configurations.
+
+Then, we save our point position in the current buffer.
+
+Next, we create a new buffer, set it up. Maybe here we can use the Deft buffer, but modifying the ~RET~ key to yield the ID associated with the line at point.
+
+Finally, we restore our configuration and type the ID.

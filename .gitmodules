@@ -13,3 +13,6 @@ url=https://github.com/cpbotha/deft-turbo
 [submodule "web-mode"]
 	path = web-mode
 	url = https://github.com/fxbois/web-mode.git
+[submodule "tpemacs"]
+	path = tpemacs
+	url = https://github.com/fabiofortkamp/tpemacs.git

@@ -139,6 +139,23 @@ Finally, open the file
   (find-file zettel-file-name)
 #+END_SRC
 
+Insert MultiMarkdown Metadata at the beginning
+#+BEGIN_SRC emacs-lisp
+  (insert
+   (format
+  "Title: %s  
+Author: Fábio Fortkamp  
+Date: %s  
+Tags:  
+Bibtex: non-fiction  
+
+"
+  zettel-title
+  (format-time-string "%Y-%m-%d")
+  )
+  )
+#+END_SRC
+
 Close the ~let~ and ~defun~ blocks
 #+BEGIN_SRC emacs-lisp
 ))
@@ -225,12 +242,16 @@ A simple function that be of help, before we create more sophisticated function,
         (let (zettel-id)
           (string-match "\\([0-9]*\\)" (file-name-nondirectory (buffer-file-name)))
           (setq zettel-id (match-string 1 (file-name-nondirectory (buffer-file-name))))
-          (kill-new zettel-id)
-          (if (> (length zettel-id) 0) (message "Zettel ID copied")
+          (if (> (length zettel-id) 0)
+              (progn
+                (kill-new zettel-id)
+                (message "Zettel ID copied"))
+              
             )
           )
         )
 #+END_SRC
+
 
 We use "k" as a modifier key to remember of "kill"
 

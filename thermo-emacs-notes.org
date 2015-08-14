@@ -219,13 +219,17 @@ In my system, my "notes" or "zettel" are markdown notes. So, to prevent conflict
 A simple function that be of help, before we create more sophisticated function, is one that simply pushes the zettel ID of the file in the current-buffer to the kill-ring:
 
 #+BEGIN_SRC emacs-lisp
-    (defun thermo-emacs-copy-zettel-id ()
-      "Puts the zettel ID of file in the current-buffer in the kill-ring"
-      (interactive)
-      (string-match "\\([0-9]*\\)" (file-name-nondirectory (buffer-file-name)))
-      (kill-new (match-string 1 (file-name-nondirectory (buffer-file-name))))
-      (message "Zettel ID copied")
-      )
+  (defun thermo-emacs-copy-zettel-id ()
+        "Puts the zettel ID of file in the current-buffer in the kill-ring"
+        (interactive)
+        (let (zettel-id)
+          (string-match "\\([0-9]*\\)" (file-name-nondirectory (buffer-file-name)))
+          (setq zettel-id (match-string 1 (file-name-nondirectory (buffer-file-name))))
+          (kill-new zettel-id)
+          (if (> (length zettel-id) 0) (message "Zettel ID copied")
+            )
+          )
+        )
 #+END_SRC
 
 We use "k" as a modifier key to remember of "kill"

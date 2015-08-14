@@ -214,6 +214,27 @@ In my system, my "notes" or "zettel" are markdown notes. So, to prevent conflict
   (define-key markdown-mode-map (kbd "C-c f") 'thermo-emacs-open-zettel-from-id-at-point)
 #+END_SRC
 
+** Copy zettel ID
+
+A simple function that be of help, before we create more sophisticated function, is one that simply pushes the zettel ID of the file in the current-buffer to the kill-ring:
+
+#+BEGIN_SRC emacs-lisp
+    (defun thermo-emacs-copy-zettel-id ()
+      "Puts the zettel ID of file in the current-buffer in the kill-ring"
+      (interactive)
+      (string-match "\\([0-9]*\\)" (file-name-nondirectory (buffer-file-name)))
+      (kill-new (match-string 1 (file-name-nondirectory (buffer-file-name))))
+      (message "Zettel ID copied")
+      )
+#+END_SRC
+
+We use "k" as a modifier key to remember of "kill"
+
+#+BEGIN_SRC emacs-lisp
+  (define-key markdown-mode-map (kbd "C-c k") 'thermo-emacs-copy-zettel-id)
+#+END_SRC
+
+
 ** Insert zettel ID at point
 
 A third useful function to have is one that inserts a zettel ID. Suppose I'm writing a note, and I want to refer to a note that I am pretty sure I already wrote. I invoke this function (preferably via a keyboard shortcut), and Emacs opens a new window with a buffer containing the list of files in my notes directory. With an interface similar to deft mode, I can search for IDs or by text, and the list narrows to files matching that criteria. When I find the file I want, I press enter with the point at the file name, and Emacs then inserts the zettel ID at the point in the buffer where I invoked the function.

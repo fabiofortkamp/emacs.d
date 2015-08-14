@@ -78,6 +78,7 @@
  '(reftex-label-alist (quote ((nil 101 nil "\\autoref{%s}" nil nil))))
  '(reftex-ref-style-default-list (quote ("Default" "Hyperref")))
  '(safe-local-variable-values (quote ((engine . django))))
+ '(show-paren-mode t)
  '(term-scroll-show-maximum-output t)
  '(vc-follow-symlinks nil)
  '(web-mode-enable-engine-detection t))

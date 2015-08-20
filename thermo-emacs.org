@@ -148,6 +148,12 @@ Load the remote editing configurations:
 (org-babel-load-file (expand-file-name "thermo-emacs-remote.org" dotfiles-dir))
 #+END_SRC
 
+Load the snippets:
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-load-file (expand-file-name "thermo-emacs-snippets.org" dotfiles-dir))
+#+END_SRC
+
 * Auxiliary functions
 
 Here is a function that reloads the init file.

@@ -106,6 +106,13 @@ Load the ELPA packages
 (package-initialize)
 #+END_SRC
 
+Load the snippets:
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-load-file (expand-file-name "thermo-emacs-snippets.org" dotfiles-dir))
+#+END_SRC
+
+
 Load the configurations related to note-taking:
 
 #+BEGIN_SRC emacs-lisp
@@ -148,11 +155,6 @@ Load the remote editing configurations:
 (org-babel-load-file (expand-file-name "thermo-emacs-remote.org" dotfiles-dir))
 #+END_SRC
 
-Load the snippets:
-
-#+BEGIN_SRC emacs-lisp
-(org-babel-load-file (expand-file-name "thermo-emacs-snippets.org" dotfiles-dir))
-#+END_SRC
 
 * Auxiliary functions
 

@@ -28,6 +28,23 @@ Enable taskpaper mode
  (add-to-list 'auto-mode-alist '("\\.taskpaper\\'" . taskpaper-mode)) 
 #+END_SRC
 
+* Macros
+
+** Insert link
+
+Here is a macro that I've been finding useful. With a region selected, this macro will expand the yasnippet abbreviation to insert a link, with the region already filled as the link text, and ready to insert an URL, in the snipept mode (with tabs working and everything!).
+
+#+BEGIN_SRC emacs-lisp
+  (fset 'yas-link-region
+     [?\C-w ?l ?i ?n ?k C-tab ?\C-y tab])
+#+END_SRC
+
+I bind ~C-c l~ to this macro:
+
+#+BEGIN_SRC emacs-lisp
+  (define-key markdown-mode-map (kbd "C-c l") 'yas-link-region) 
+#+END_SRC
+
 * Modifying list continuation in Markdown mode
 
 I would like to use automatic list continuation; i.e. when I press enter on a list, it creates a new list item. First we need a function to detect if we are inside a list; I use a function from the markdown mode that returns a list containing some parameters (such as marker used, indentation etc), and /returns nil if point is not inside a list/.

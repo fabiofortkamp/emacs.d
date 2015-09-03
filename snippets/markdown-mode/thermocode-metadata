@@ -1,0 +1,14 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: thermocode-metadata
+# key: tmd
+# binding: direct-keybinding
+# --
+Title: $1  
+Author: Fábio Fortkamp
+Date:
+Category: $2  
+Tags: $3
+Slug: $4  
+Status:
+
+$0

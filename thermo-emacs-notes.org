@@ -45,6 +45,20 @@ I bind ~C-c l~ to this macro:
   (define-key markdown-mode-map (kbd "C-c l") 'yas-link-region) 
 #+END_SRC
 
+** Master Project List
+
+Regularly, I have to clean a note I call "Master Projec List", which contains an overview of my week. There is a snippet for markdown-mode called "master-project-list", which creates an empty tempalte to be filled. This macro kills the whole buffer and trigger this snippet:
+
+#+BEGIN_SRC emacs-lisp
+  (fset 'master-project-list
+     (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([24 104 23 109 112 108 C-tab] 0 "%d")) arg)))
+#+END_SRC
+
+This is bound to ~C-c m~:
+
+#+BEGIN_SRC emacs-lisp
+  (define-key markdown-mode-map (kbd "C-c m") 'master-project-list) 
+#+END_SRC
 * Modifying list continuation in Markdown mode
 
 I would like to use automatic list continuation; i.e. when I press enter on a list, it creates a new list item. First we need a function to detect if we are inside a list; I use a function from the markdown mode that returns a list containing some parameters (such as marker used, indentation etc), and /returns nil if point is not inside a list/.

@@ -91,6 +91,19 @@ I also enable the command to convert a region to uppercase.
 (put 'upcase-region 'disabled nil)
 #+END_SRC
 
+** Aditional minor packages
+
+These are a collection of small packages that greatly enhance the experience.
+
+For example, ~expand-region~ expands the region. For example, with the point at a word, keep pressing this key until the region is expanded to what you want. It understands "semantic" units; that is, it first selects a word, then selects a sentence, than the paragraph etc. Also, it understands when text is enclosed by quotes, parenthesis etc. 
+
+#+BEGIN_SRC emacs-lisp
+  (require 'expand-region)
+  (global-set-key (kbd "C-=") 'er/expand-region)
+#+END_SRC
+
+In the above example, with the cursor anywhere in "region", it will select the word "region", then the "expanded-word" "'er/expand-region", then what is between ~()~ etc.
+
 * Loading files
 
 Load some basic global keybindings.

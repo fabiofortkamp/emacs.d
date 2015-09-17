@@ -16,3 +16,6 @@ url=https://github.com/cpbotha/deft-turbo
 [submodule "tpemacs"]
 	path = tpemacs
 	url = https://github.com/fabiofortkamp/tpemacs.git
+[submodule "expand-region.el"]
+	path = expand-region.el
+	url = https://github.com/magnars/expand-region.el.git

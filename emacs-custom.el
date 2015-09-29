@@ -62,7 +62,7 @@
  '(ns-alternate-modifier (quote none))
  '(org-agenda-files
    (quote
-    ("~/Documents/phd/disciplinas/em/multiphase-flow-class-notes/mf-class1.org")))
+    ("~/latex-writing/amr-literature-review/amr-literature-review.org" "~/Documents/phd/disciplinas/em/multiphase-flow-class-notes/mf-class1.org")))
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")

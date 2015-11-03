@@ -63,6 +63,7 @@
  '(org-agenda-files
    (quote
     ("~/latex-writing/amr-literature-review/amr-literature-review.org" "~/Documents/phd/disciplinas/em/multiphase-flow-class-notes/mf-class1.org")))
+ '(org-hide-leading-stars t)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")

@@ -161,11 +161,14 @@
 
   (insert
    (format
-  "Title: %s  
+  "---
+Title: %s  
 Author: Fábio Fortkamp  
 Date: %s  
 Tags:  
-Bibtex: non-fiction  
+bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
+
+---  
 
 "
   zettel-title

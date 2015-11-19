@@ -20,9 +20,6 @@
 (setq coding-system-for-read 'utf-8)
 (setq coding-system-for-write 'utf-8)
 
-; make the first running instance of emacs a server
-(load "server")
-(unless (server-running-p) (server-start))
 
 ; disable the useless toolbar
 (tool-bar-mode -1)
@@ -315,5 +312,8 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
              (tramp-parse-sconfig "~/.ssh/config")))
 
 
+; make the first running instance of emacs a server
+(load "server")
+(unless (server-running-p) (server-start))
 
 ;;; init.el ends here

@@ -285,7 +285,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 ;; WINDOWS SPECIFIC STUFF
 (if (eq system-type 'windows-nt)
     (progn
-      (set-face-font 'default "InputMono")
+      (set-face-font 'default "DejaVu Sans Mono")
       (set-variable 'TeX-view-program-selection
 		      '((output-pdf "PDF-XChange")))
       ; autohotkey

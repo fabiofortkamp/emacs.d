@@ -160,5 +160,6 @@ $0
 
 %%% Local Variables:
 %%% mode: latex
+%%% TeX-command-default: "LatexMk"  
 %%% TeX-master: t
 %%% End:

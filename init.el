@@ -313,4 +313,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (load "server")
 (unless (server-running-p) (server-start))
 
+;; auto-complete
+(ac-config-default)
+
 ;;; init.el ends here

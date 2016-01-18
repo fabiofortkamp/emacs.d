@@ -10,3 +10,7 @@ eshell.sh
 bookmarks
 tramp
 server/
+lisp/auctex*
+*.dat
+lisp/preview-latex.el
+lisp/tex-site.el

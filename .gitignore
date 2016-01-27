@@ -11,3 +11,7 @@ bookmarks
 tramp
 server/
 ac-comphist.dat
+lisp/auctex*
+*.dat
+lisp/preview-latex.el
+lisp/tex-site.el

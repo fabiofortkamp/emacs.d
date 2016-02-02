@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Strong with **
+# key: **
+# binding: direct-keybinding
+# --
+**$1** $0

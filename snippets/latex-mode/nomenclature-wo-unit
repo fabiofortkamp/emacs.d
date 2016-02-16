@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: nomenclature-wo-unit
+# key: nomw
+# binding: direct-keybinding
+# --
+\nomenclature[$1]{$2}{$3}$0

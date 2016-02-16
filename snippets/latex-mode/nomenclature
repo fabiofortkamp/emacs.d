@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: nomenclature
+# key: nom
+# binding: direct-keybinding
+# --
+\nomenclature[$1]{$2}{$3 [\si{$4}]}$0

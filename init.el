@@ -284,7 +284,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
     (progn
       (set-face-font 'default "DejaVu Sans Mono")
       (set-variable 'TeX-view-program-selection
-		      '((output-pdf "PDF-XChange")))
+		      '((output-pdf "Sumatra")))
       ; autohotkey
       (setq ahk-syntax-directory "C:/Program Files (x86)/AutoHotkey/Extras/Editors/Syntax")
       (add-to-list 'auto-mode-alist '("\\.ahk$" . ahk-mode))

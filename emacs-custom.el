@@ -50,7 +50,7 @@
    (quote
     (("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b %n %o %b")
      ("Sumatra"
-      ("C:\\Program Files (x86)\\SumatraPDF\\SumatraPDF.exe -reuse-instance"
+      ("SumatraPDF.exe -reuse-instance"
        (mode-io-correlate " -forward-search %b %n")
        " %o"))
      ("Preview" "open %o -a Preview")

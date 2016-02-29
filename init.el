@@ -30,6 +30,29 @@
 ; enable "logical" lines (`C-n` moves to the next "visible" line
 (global-visual-line-mode 1)
 
+; Package management
+(require 'package)
+
+
+
+(package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar myPackages
+  '(pandoc-mode
+    yasnippet
+    exec-path-from-shell
+    auto-complete
+    elpy
+    ))
+
+(mapc #'(lambda (package)
+    (unless (package-installed-p package)
+      (package-install package)))
+      myPackages)
+
+
 ; my theme of choice
 (add-to-list 'custom-theme-load-path (expand-file-name  "emacs-color-theme-solarized" dotfiles-dir))
 (load-theme 'solarized t)
@@ -56,9 +79,6 @@
 (global-set-key "\M-?" 'help-command)
 (global-set-key "\C-h" 'delete-backward-char)
 
-;; PACKAGE CONTROL
-(setq package-enable-at-startup nil)
-(package-initialize)
 
 ;; SNIPPETS
 
@@ -316,5 +336,10 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 ;; auto-complete
 (ac-config-default)
+
+;; PYTHON
+(elpy-enable)
+
+(elpy-use-ipython)
 
 ;;; init.el ends here

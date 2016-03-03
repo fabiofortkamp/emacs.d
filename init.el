@@ -3,7 +3,7 @@
 ; init.el --- Where all the magic begins
 
 ;; INITIAL SETTINGS
-;; Load up Org Mode and (now included) Org Babel for elisp embedded in Org Mode files
+
 (setq thermo-emacs-init-file (or (buffer-file-name) load-file-name))
 
 (setq dotfiles-dir (file-name-directory thermo-emacs-init-file))
@@ -278,6 +278,12 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
   (define-key org-mode-map (kbd "C-c (") 'reftex-citation))
 
 (add-hook 'org-mode-hook 'org-mode-reftex-setup)
+
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
 
 
 ;; OS X SPECIFIC STUFF

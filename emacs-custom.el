@@ -64,9 +64,14 @@
  '(electric-indent-mode nil)
  '(inhibit-startup-screen t)
  '(ns-alternate-modifier (quote none))
- '(org-agenda-files
+ '(org-agenda-custom-commands
    (quote
-    ("~/latex-writing/amr-literature-review/amr-literature-review.org" "~/Documents/phd/disciplinas/em/multiphase-flow-class-notes/mf-class1.org")))
+    (("d" "Dashboard" tags-todo "FLAGGED"
+      ((org-agenda-todo-ignore-scheduled
+	(quote future)))))))
+ '(org-agenda-files (quote ("~/Dropbox/notes/tasks/tasks.org")))
+ '(org-agenda-tags-todo-honor-ignore-options t)
+ '(org-directory "~/Dropbox/notes")
  '(org-export-backends (quote (ascii html icalendar latex md org)))
  '(org-hide-leading-stars t)
  '(package-archives

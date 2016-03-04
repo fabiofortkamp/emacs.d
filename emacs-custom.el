@@ -75,6 +75,7 @@
  '(org-directory "~/Dropbox/notes")
  '(org-export-backends (quote (ascii html icalendar latex md org)))
  '(org-hide-leading-stars t)
+ '(org-log-repeat nil)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")

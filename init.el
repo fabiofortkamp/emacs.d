@@ -285,7 +285,16 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+(defun thermo-emacs-open-dashboard()
+  (interactive)
+  (org-agenda "a" "d"))
 
+(defun thermo-emacs-open-forecast()
+  (interactive)
+  (org-agenda "a" "a"))
+
+(global-set-key (kbd "<f7>") 'thermo-emacs-open-dashboard)
+(global-set-key (kbd "<f6>") 'thermo-emacs-open-forecast)
 
 ;; OS X SPECIFIC STUFF
 (if (eq system-type 'darwin)

@@ -3,7 +3,7 @@
 ; init.el --- Where all the magic begins
 
 ;; INITIAL SETTINGS
-;; Load up Org Mode and (now included) Org Babel for elisp embedded in Org Mode files
+
 (setq thermo-emacs-init-file (or (buffer-file-name) load-file-name))
 
 (setq dotfiles-dir (file-name-directory thermo-emacs-init-file))
@@ -29,6 +29,29 @@
 
 ; enable "logical" lines (`C-n` moves to the next "visible" line
 (global-visual-line-mode 1)
+
+; Package management
+(require 'package)
+
+
+
+(package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar myPackages
+  '(pandoc-mode
+    yasnippet
+    exec-path-from-shell
+    auto-complete
+    elpy
+    ))
+
+(mapc #'(lambda (package)
+    (unless (package-installed-p package)
+      (package-install package)))
+      myPackages)
+
 
 ; my theme of choice
 (add-to-list 'custom-theme-load-path (expand-file-name  "emacs-color-theme-solarized" dotfiles-dir))
@@ -56,9 +79,6 @@
 (global-set-key "\M-?" 'help-command)
 (global-set-key "\C-h" 'delete-backward-char)
 
-;; PACKAGE CONTROL
-(setq package-enable-at-startup nil)
-(package-initialize)
 
 ;; SNIPPETS
 
@@ -259,6 +279,12 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (add-hook 'org-mode-hook 'org-mode-reftex-setup)
 
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+
 
 ;; OS X SPECIFIC STUFF
 (if (eq system-type 'darwin)
@@ -284,7 +310,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
     (progn
       (set-face-font 'default "DejaVu Sans Mono")
       (set-variable 'TeX-view-program-selection
-		      '((output-pdf "PDF-XChange")))
+		      '((output-pdf "Sumatra")))
       ; autohotkey
       (setq ahk-syntax-directory "C:/Program Files (x86)/AutoHotkey/Extras/Editors/Syntax")
       (add-to-list 'auto-mode-alist '("\\.ahk$" . ahk-mode))
@@ -317,6 +343,9 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 ;; auto-complete
 (ac-config-default)
 
+;; PYTHON
+(elpy-enable)
 
+(elpy-use-ipython)
 
 ;;; init.el ends here

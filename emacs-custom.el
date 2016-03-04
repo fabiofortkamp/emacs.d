@@ -45,10 +45,14 @@
      ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
      ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
      ("Other" "" TeX-run-command t t :help "Run an arbitrary command"))))
+ '(TeX-source-correlate-mode t)
  '(TeX-view-program-list
    (quote
     (("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b %n %o %b")
-     ("Sumatra" "SumatraPDF.exe %o")
+     ("Sumatra"
+      ("SumatraPDF.exe -reuse-instance"
+       (mode-io-correlate " -forward-search %b %n")
+       " %o"))
      ("Preview" "open %o -a Preview")
      ("PDF-XChange" "PDFXCview.exe %o")
      ("Split-Skim" "osascript ~/code/splitskim/splitskim.applescript %n %o %b \"Emacs + Skim\""))))
@@ -60,14 +64,20 @@
  '(electric-indent-mode nil)
  '(inhibit-startup-screen t)
  '(ns-alternate-modifier (quote none))
- '(org-agenda-files nil)
+ '(org-agenda-custom-commands
+   (quote
+    (("d" "Dashboard" tags-todo "FLAGGED"
+      ((org-agenda-todo-ignore-scheduled
+	(quote future)))))))
+ '(org-agenda-files (quote ("~/Dropbox/notes/tasks/tasks.org")))
+ '(org-agenda-tags-todo-honor-ignore-options t)
+ '(org-directory "~/Dropbox/notes")
  '(org-export-backends (quote (ascii html icalendar latex md org)))
  '(org-hide-leading-stars t)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
-     ("marmalade" . "http://marmalade-repo.org/packages/")
-     ("melpa" . "http://melpa.milkbox.net/packages/"))))
+     ("melpa" . "http://melpa.org/packages/"))))
  '(reftex-cite-format
    (quote
     ((13 . "\\cite{%l}")

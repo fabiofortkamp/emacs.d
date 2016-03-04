@@ -60,9 +60,7 @@
  '(electric-indent-mode nil)
  '(inhibit-startup-screen t)
  '(ns-alternate-modifier (quote none))
- '(org-agenda-files
-   (quote
-    ("~/latex-writing/amr-literature-review/amr-literature-review.org" "~/Documents/phd/disciplinas/em/multiphase-flow-class-notes/mf-class1.org")))
+ '(org-agenda-files nil)
  '(org-export-backends (quote (ascii html icalendar latex md org)))
  '(org-hide-leading-stars t)
  '(package-archives

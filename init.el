@@ -45,7 +45,7 @@
     exec-path-from-shell
     auto-complete
     elpy
-    ein
+;    ein
     ))
 
 (mapc #'(lambda (package)
@@ -358,5 +358,5 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (elpy-use-ipython)
 
-(require 'ein)
+;(require 'ein)
 ;;; init.el ends here

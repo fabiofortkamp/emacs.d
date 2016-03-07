@@ -46,6 +46,7 @@
     auto-complete
     elpy
     yaml-mode
+    auctex
 ;    ein
     ))
 
@@ -242,7 +243,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 ;; LATEX
 
 (load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+(load "preview.el" nil t t)
 
 (setq TeX-autqo-save t)
 (setq TeX-parse-self t)

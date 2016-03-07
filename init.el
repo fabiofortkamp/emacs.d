@@ -45,6 +45,7 @@
     exec-path-from-shell
     auto-complete
     elpy
+    yaml-mode
 ;    ein
     ))
 

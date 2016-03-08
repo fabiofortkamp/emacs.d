@@ -370,6 +370,6 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (elpy-use-ipython)
 
-(add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 70)))
+(add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 79)))
 ;(require 'ein)
 ;;; init.el ends here

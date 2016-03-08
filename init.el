@@ -47,6 +47,7 @@
     elpy
     yaml-mode
     auctex
+    column-marker
 ;    ein
     ))
 
@@ -62,6 +63,10 @@
 
 ; enable upcase-region
 (put 'upcase-region 'disabled nil)
+
+; highlight the 80-th column
+(require 'column-marker)
+
 
 ;; MINOR PACKAGES
 
@@ -365,5 +370,6 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (elpy-use-ipython)
 
+(add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 70)))
 ;(require 'ein)
 ;;; init.el ends here

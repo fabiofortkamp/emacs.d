@@ -298,6 +298,11 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (global-set-key (kbd "<f7>") 'thermo-emacs-open-dashboard)
 (global-set-key (kbd "<f6>") 'thermo-emacs-open-forecast)
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)
+   ))
+
 ;; OS X SPECIFIC STUFF
 (if (eq system-type 'darwin)
     (progn

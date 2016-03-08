@@ -249,6 +249,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (load "auctex.el" nil t t)
 (load "preview.el" nil t t)
+(load "texmathp.el" nil t t)
 
 (setq TeX-autqo-save t)
 (setq TeX-parse-self t)

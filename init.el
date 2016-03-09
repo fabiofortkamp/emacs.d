@@ -313,14 +313,12 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (setq te-main-task-file-name "tasks.org")
 
-(setq te-main-task-file (expand-file-name te-main-task-file org-directory))
+(setq te-main-task-file (expand-file-name te-main-task-file-name org-directory))
 
 (defun te-open-main-task-file ()
   "Visit TE-MAIN-TASK-FILE in another window"
   (interactive)
   (find-file-other-window te-main-task-file))
-
-(te-open-main-task-file)
 
 (global-set-key (kbd "C-c o") 'te-open-main-task-file)
 
@@ -330,6 +328,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
   (org-agenda-todo)
   (org-agenda-redo))
 
+(require 'org-agenda)
 (define-key org-agenda-mode-map (kbd "t") 'te-org-agenda-check-and-refresh)
 
 (defun te-org-archive-done-tasks ()

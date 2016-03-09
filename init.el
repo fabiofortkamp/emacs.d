@@ -48,6 +48,8 @@
     yaml-mode
     auctex
     column-marker
+    polymode
+    ess
 ;    ein
     ))
 
@@ -372,5 +374,6 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (elpy-use-ipython)
 
 (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 79)))
-;(require 'ein)
+
+
 ;;; init.el ends here

@@ -311,6 +311,36 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
  '((python . t)
    ))
 
+(setq te-main-task-file-name "tasks.org")
+
+(setq te-main-task-file (expand-file-name te-main-task-file org-directory))
+
+(defun te-open-main-task-file ()
+  "Visit TE-MAIN-TASK-FILE in another window"
+  (interactive)
+  (find-file-other-window te-main-task-file))
+
+(te-open-main-task-file)
+
+(global-set-key (kbd "C-c o") 'te-open-main-task-file)
+
+(defun te-org-agenda-check-and-refresh ()
+  "Call the org-agenda functions to 'check' the current headline and refresh buffer"
+  (interactive)
+  (org-agenda-todo)
+  (org-agenda-redo))
+
+(define-key org-agenda-mode-map (kbd "t") 'te-org-agenda-check-and-refresh)
+
+(defun te-org-archive-done-tasks ()
+  "Archive all DONE tasks in current file"
+   (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading)))
+   "/DONE" 'file))
+
 ;; OS X SPECIFIC STUFF
 (if (eq system-type 'darwin)
     (progn

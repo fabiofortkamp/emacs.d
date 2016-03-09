@@ -75,7 +75,7 @@
 	(quote future)))))))
  '(org-agenda-files (quote ("~/Dropbox/notes/tasks/tasks.org")))
  '(org-agenda-tags-todo-honor-ignore-options t)
- '(org-directory "~/Dropbox/notes")
+ '(org-directory "~/Dropbox/notes/tasks")
  '(org-export-backends (quote (ascii html icalendar latex md org)))
  '(org-hide-leading-stars t)
  '(org-log-repeat nil)

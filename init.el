@@ -404,5 +404,31 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 79)))
 
+;; Polymode
+
+(require 'polymode)
+
+(defcustom  pm-inner/pweave
+  (pm-hbtchunkmode "pweave"
+                   :head-reg "^[ \t]*<<\\(.*\\)>>=\\|<%"
+                   :tail-reg "^[ \t]*@ *\\( %def .*\\)?$\\|%>"
+		   :mode 'python-mode)
+
+  "Pweave chunk."
+  :group 'innermodes
+  :type 'object)
+
+(defcustom pm-poly/pweave
+  (pm-polymode-one "pweave"
+                   :hostmode 'pm-host/latex
+                   :innermode 'pm-inner/pweave
+)
+  "Pweave configuration"
+  :group 'polymodes
+  :type 'object)
+
+(define-polymode poly-pweave-mode pm-poly/pweave :lighter " Pweave")
+
+(add-to-list 'auto-mode-alist '("\\.Pnw" . poly-pweave-mode))
 
 ;;; init.el ends here

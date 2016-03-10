@@ -33,8 +33,6 @@
 ; Package management
 (require 'package)
 
-
-
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -50,7 +48,7 @@
     column-marker
     polymode
     ess
-;    ein
+    ein
     ))
 
 (mapc #'(lambda (package)

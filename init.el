@@ -273,7 +273,23 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (eval-after-load "latex"
 '(define-key docTeX-mode-map (kbd "\C-c j") 'comment-indent-new-line))
 
+(add-to-list 'TeX-expand-list
+	     '("%(base-file-name)"
+				(lambda ()
+				  (concat "\"" (file-name-base) "\""))))
+(add-to-list 'TeX-expand-list
+	     '("%(pdf-file-name)"
+				(lambda ()
+				  (concat "\"" (file-name-base) ".pdf" "\""))))
 
+(setq-default TeX-command-list
+                (cons
+                 '("LatexMk-Pnw" "latexmk %(-PDF)%S%(mode) %(file-line-error) %(base-file-name)" TeX-run-latexmk nil
+                   (plain-tex-mode latex-mode doctex-mode) :help "Run LatexMk")
+                 TeX-command-list)
+                LaTeX-clean-intermediate-suffixes
+                (append LaTeX-clean-intermediate-suffixes
+                        '("\\.fdb_latexmk" "\\.aux.bak" "\\.fls")))
 ;; ORG-MODE
 
 (require 'org)

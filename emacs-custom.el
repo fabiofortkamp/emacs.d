@@ -55,7 +55,7 @@
        " %o"))
      ("Preview" "open %o -a Preview")
      ("PDF-XChange" "PDFXCview.exe %o")
-     ("Split-Skim" "osascript ~/code/splitskim/splitskim.applescript %n %o %b \"Emacs + Skim\""))))
+     ("Split-Skim" "osascript ~/code/splitskim/splitskim.applescript %n %(pdf-file-name) %b \"Emacs + Skim\""))))
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(comment-empty-lines t)
  '(custom-safe-themes

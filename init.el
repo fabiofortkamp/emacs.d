@@ -376,7 +376,8 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 ;; WINDOWS SPECIFIC STUFF
 (if (eq system-type 'windows-nt)
     (progn
-      (set-face-font 'default "DejaVu Sans Mono")
+;      (set-face-font 'default "DejaVu Sans Mono")
+      (set-face-font 'default "Consolas")
       (set-variable 'TeX-view-program-selection
 		      '((output-pdf "Sumatra")))
       ; autohotkey

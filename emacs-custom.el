@@ -75,7 +75,9 @@
     (("d" "Dashboard" tags-todo "FLAGGED"
       ((org-agenda-todo-ignore-scheduled
 	(quote future)))))))
- '(org-agenda-files (quote ("~/Dropbox/notes/tasks/tasks.org")))
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/notes/20160331121300 Energy magnetic fields.org" "~/Dropbox/notes/tasks/tasks.org")))
  '(org-agenda-tags-todo-honor-ignore-options t)
  '(org-directory "~/Dropbox/notes/tasks")
  '(org-export-backends (quote (ascii html icalendar latex md org)))
@@ -93,6 +95,9 @@
      (112 . "[@%l]")
      (116 . "@%l")
      (105 . "%l"))))
+ '(reftex-default-bibliography
+   (quote
+    ("~/foam-thermo-ref/Thermo-Foam-Ref.bib" "~/foam-thermo-ref/non-fiction.bib")))
  '(reftex-label-alist (quote ((nil 101 nil "\\autoref{%s}" nil nil))))
  '(reftex-ref-style-default-list (quote ("Default" "Hyperref")))
  '(safe-local-variable-values

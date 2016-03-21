@@ -56,6 +56,8 @@
      ("Preview" "open %o -a Preview")
      ("PDF-XChange" "PDFXCview.exe %o")
      ("Split-Skim" "osascript ~/code/splitskim/splitskim.applescript %n %(pdf-file-name) %b \"Emacs + Skim\""))))
+ '(bibtex-autokey-prefix-string "bib:")
+ '(bibtex-autokey-year-title-separator "_")
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(comment-empty-lines t)
  '(custom-safe-themes

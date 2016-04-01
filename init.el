@@ -57,9 +57,13 @@
       myPackages)
 
 
-; my theme of choice
+; I like the theme solarized, and this manual installation is the best option to me
 (add-to-list 'custom-theme-load-path (expand-file-name  "emacs-color-theme-solarized" dotfiles-dir))
-(load-theme 'solarized t)
+(add-to-list 'custom-theme-load-path (expand-file-name  "zenburn-emacs" dotfiles-dir))
+
+(load-theme 'zenburn t)
+
+; right now I'm experimenting with zenburn
 
 ; enable upcase-region
 (put 'upcase-region 'disabled nil)

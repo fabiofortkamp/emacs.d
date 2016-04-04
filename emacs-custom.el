@@ -52,7 +52,7 @@
      ("Sumatra"
       ("SumatraPDF.exe -reuse-instance"
        (mode-io-correlate " -forward-search %b %n")
-       " %o"))
+       " %(pdf-file-name)"))
      ("Preview" "open %o -a Preview")
      ("PDF-XChange" "PDFXCview.exe %o")
      ("Split-Skim" "osascript ~/code/splitskim/splitskim.applescript %n %(pdf-file-name) %b \"Emacs + Skim\""))))

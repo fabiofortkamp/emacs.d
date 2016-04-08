@@ -83,7 +83,7 @@
 	(quote future)))))))
  '(org-agenda-files
    (quote
-    ("~/Dropbox/notes/20160331121300 Energy magnetic fields.org" "~/Dropbox/notes/tasks/tasks.org")))
+    ("~/latex-writing/paper-analytical-halbach/notes.org" "~/Dropbox/notes/20160331121300 Energy magnetic fields.org" "~/Dropbox/notes/tasks/tasks.org")))
  '(org-agenda-tags-todo-honor-ignore-options t)
  '(org-directory "~/Dropbox/notes/tasks")
  '(org-export-backends (quote (ascii html icalendar latex md org)))

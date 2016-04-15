@@ -460,6 +460,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (global-set-key (kbd "C-c C-m") 'helm-M-x)
 
 (setq helm-M-x-fuzzy-match t)
+(setq helm-buffers-fuzzy-matching t)
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 

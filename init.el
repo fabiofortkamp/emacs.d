@@ -279,6 +279,12 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
 (add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
 
+(setq bibtex-dir (expand-file-name "thermo-ref" home-dir))
+
+(setq reftex-default-bibliography (list (expand-file-name "Thermo-Foam-Ref.bib" bibtex-dir)
+				    (expand-file-name "non-fiction.bib" bibtex-dir)))
+				    
+
 (add-to-list 'load-path (expand-file-name "auctex-latexmk" dotfiles-dir))
 (require 'auctex-latexmk)
 (auctex-latexmk-setup)
@@ -472,4 +478,17 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 (helm-mode 1)
+
+;; helm-bibtex
+
+(setq bibtex-completion-bibliography reftex-default-bibliography)
+(setq bibtex-completion-library-path (list (expand-file-name "papers" dropbox-dir)
+				       (expand-file-name "engineering-books" dropbox-dir))
+      )
+
+
+(setq bibtex-completion-pdf-field "File")
+
+(setq bibtex-completion-pdf-symbol "⌘")
+(setq bibtex-completion-notes-symbol "✎")
 ;;; init.el ends here

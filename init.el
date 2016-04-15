@@ -15,6 +15,12 @@
 ; add init directory to load path
 (add-to-list 'load-path (expand-file-name "lisp" dotfiles-dir))
 
+; some usual directories
+
+(setq home-dir (expand-file-name "." (getenv "HOME")))
+
+(setq dropbox-dir (expand-file-name "Dropbox" home-dir))
+
 ; set coding system
 (prefer-coding-system 'utf-8)
 (setq coding-system-for-read 'utf-8)
@@ -50,6 +56,7 @@
     ess
     ein
     helm
+    helm-bibtex
     ))
 
 (mapc #'(lambda (package)
@@ -150,12 +157,12 @@
                              'thermo-emacs-markdown-enter-key)))
 
 ; deft-mode (notational-velocity)
-(add-to-list 'load-path "~/.emacs.d/deft/")
+(add-to-list 'load-path (expand-file-name "deft" dotfiles-dir))
 (require 'deft)
 
 (setq deft-extensions '("txt" "org" "taskpaper" "md"))
 (setq deft-default-extension "md")
-(setq deft-directory "~/Dropbox/notes")
+(setq deft-directory (expand-file-name "notes" dropbox-dir))
 (setq deft-text-mode 'markdown-mode)
 
 (setq deft-use-filename-as-title t)

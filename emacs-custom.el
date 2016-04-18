@@ -5,7 +5,13 @@
  ;; If there is more than one, they won't work right.
  '(TeX-command-list
    (quote
-    (("TeX" "%(PDF)%(tex) %(extraopts) %`%S%(PDFout)%(mode)%' %t" TeX-run-TeX nil
+    (("LatexMk-Pnw" "latexmk %(-PDF)%S%(mode) -bibtex %(file-line-error) %(base-file-name)" TeX-run-latexmk nil
+      (plain-tex-mode latex-mode doctex-mode)
+      :help "Run LatexMk")
+     ("LatexMk" "latexmk %(-PDF)%S%(mode) %t" TeX-run-latexmk nil
+      (plain-tex-mode latex-mode doctex-mode)
+      :help "Run LatexMk")
+     ("TeX" "%(PDF)%(tex) %(extraopts) %`%S%(PDFout)%(mode)%' %t" TeX-run-TeX nil
       (plain-tex-mode texinfo-mode ams-tex-mode)
       :help "Run plain TeX")
      ("LaTeX" "%`%l%(mode)%' %t" TeX-run-TeX nil
@@ -26,7 +32,7 @@
      ("ConTeXt Full" "texexec %(extraopts) %(execopts)%t" TeX-run-TeX nil
       (context-mode)
       :help "Run ConTeXt until completion")
-     ("BibTeX" "bibtex %s" TeX-run-BibTeX nil t :help "Run BibTeX")
+     ("BibTeX" "bibtex %(base-file-name)" TeX-run-BibTeX nil t :help "Run BibTeX")
      ("Biber" "biber %s" TeX-run-Biber nil t :help "Run Biber")
      ("View" "%V" TeX-run-discard-or-function t t :help "Run Viewer")
      ("Print" "%p" TeX-run-command t t :help "Print the file")

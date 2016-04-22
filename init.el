@@ -494,4 +494,11 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (setq bibtex-completion-pdf-symbol "⌘")
 (setq bibtex-completion-notes-symbol "✎")
+
+(if (eq system-type 'windows-nt)
+    (progn
+(setq bibtex-completion-pdf-open-function
+  (lambda (fpath)
+    (call-process-shell-command (concat "PDFXCview.exe" " "  fpath) nil 0 nil))
+)))
 ;;; init.el ends here

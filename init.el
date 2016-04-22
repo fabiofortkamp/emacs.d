@@ -469,6 +469,9 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (require 'helm-config)
 
+(global-set-key (kbd "<f9>") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-c C-m") 'helm-M-x)
 
@@ -485,7 +488,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (setq bibtex-completion-library-path (list (expand-file-name "papers" dropbox-dir)
 				       (expand-file-name "engineering-books" dropbox-dir))
       )
-
+(define-key helm-command-map (kbd "b")  'helm-bibtex) 
 
 (setq bibtex-completion-pdf-field "File")
 

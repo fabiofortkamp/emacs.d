@@ -469,6 +469,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (require 'helm-config)
 
+; use this key to acess helm functions
 (global-set-key (kbd "<f9>") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 
@@ -488,6 +489,8 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (setq bibtex-completion-library-path (list (expand-file-name "papers" dropbox-dir)
 				       (expand-file-name "engineering-books" dropbox-dir))
       )
+
+; this means pressing b after helm-command-prefix to access helm-bibtex
 (define-key helm-command-map (kbd "b")  'helm-bibtex) 
 
 (setq bibtex-completion-pdf-field "File")
@@ -495,10 +498,16 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (setq bibtex-completion-pdf-symbol "⌘")
 (setq bibtex-completion-notes-symbol "✎")
 
+; make the default option in helm-bibtex to open with PDF X-Change (in Windows)
 (if (eq system-type 'windows-nt)
     (progn
 (setq bibtex-completion-pdf-open-function
   (lambda (fpath)
-    (call-process-shell-command (concat "PDFXCview.exe" " "  fpath) nil 0 nil))
+    ; due to the way Windows paths work, we take the filename passed by
+    ; helm-bibtex and prepend the first two chars of the (f-root)
+    ; function (usually "C:/")
+    (setq fpath-normalized (concat (substring (f-root) 0 2) fpath))
+    (call-process "PDFXCview.exe"  nil 0 nil fpath-normalized)
+    )
 )))
 ;;; init.el ends here

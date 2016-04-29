@@ -15,6 +15,12 @@
 ; add init directory to load path
 (add-to-list 'load-path (expand-file-name "lisp" dotfiles-dir))
 
+; some usual directories
+
+(setq home-dir (expand-file-name "." (getenv "HOME")))
+
+(setq dropbox-dir (expand-file-name "Dropbox" home-dir))
+
 ; set coding system
 (prefer-coding-system 'utf-8)
 (setq coding-system-for-read 'utf-8)
@@ -50,6 +56,7 @@
     ess
     ein
     helm
+    helm-bibtex
     ))
 
 (mapc #'(lambda (package)
@@ -150,12 +157,12 @@
                              'thermo-emacs-markdown-enter-key)))
 
 ; deft-mode (notational-velocity)
-(add-to-list 'load-path "~/.emacs.d/deft/")
+(add-to-list 'load-path (expand-file-name "deft" dotfiles-dir))
 (require 'deft)
 
 (setq deft-extensions '("txt" "org" "taskpaper" "md"))
 (setq deft-default-extension "md")
-(setq deft-directory "~/Dropbox/notes")
+(setq deft-directory (expand-file-name "notes" dropbox-dir))
 (setq deft-text-mode 'markdown-mode)
 
 (setq deft-use-filename-as-title t)
@@ -271,6 +278,12 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (setq reftex-plug-into-AUCTeX t)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
 (add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
+
+(setq bibtex-dir (expand-file-name "thermo-ref" home-dir))
+
+(setq reftex-default-bibliography (list (expand-file-name "Thermo-Foam-Ref.bib" bibtex-dir)
+				    (expand-file-name "non-fiction.bib" bibtex-dir)))
+				    
 
 (add-to-list 'load-path (expand-file-name "auctex-latexmk" dotfiles-dir))
 (require 'auctex-latexmk)
@@ -456,6 +469,10 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 
 (require 'helm-config)
 
+; use this key to acess helm functions
+(global-set-key (kbd "<f9>") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-c C-m") 'helm-M-x)
 
@@ -465,4 +482,32 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 (helm-mode 1)
+
+;; helm-bibtex
+
+(setq bibtex-completion-bibliography reftex-default-bibliography)
+(setq bibtex-completion-library-path (list (expand-file-name "papers" dropbox-dir)
+				       (expand-file-name "engineering-books" dropbox-dir))
+      )
+
+; this means pressing b after helm-command-prefix to access helm-bibtex
+(define-key helm-command-map (kbd "b")  'helm-bibtex) 
+
+(setq bibtex-completion-pdf-field "File")
+
+(setq bibtex-completion-pdf-symbol "⌘")
+(setq bibtex-completion-notes-symbol "✎")
+
+; make the default option in helm-bibtex to open with PDF X-Change (in Windows)
+(if (eq system-type 'windows-nt)
+    (progn
+(setq bibtex-completion-pdf-open-function
+  (lambda (fpath)
+    ; due to the way Windows paths work, we take the filename passed by
+    ; helm-bibtex and prepend the first two chars of the (f-root)
+    ; function (usually "C:/")
+    (setq fpath-normalized (concat (substring (f-root) 0 2) fpath))
+    (call-process "PDFXCview.exe"  nil 0 nil fpath-normalized)
+    )
+)))
 ;;; init.el ends here

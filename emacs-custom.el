@@ -86,6 +86,12 @@
    (quote
     (("d" "Dashboard" tags-todo "FLAGGED"
       ((org-agenda-todo-ignore-scheduled
+	(quote future))))
+     ("y" "All Available" alltodo ""
+      ((org-agenda-todo-ignore-scheduled
+	(quote future))))
+     ("x" "Available at home" tags-todo "-errands"
+      ((org-agenda-todo-ignore-scheduled
 	(quote future)))))))
  '(org-agenda-files
    (quote

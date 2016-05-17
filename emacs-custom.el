@@ -90,7 +90,7 @@
      ("y" "All Available" alltodo ""
       ((org-agenda-todo-ignore-scheduled
 	(quote future))))
-     ("x" "Available at home" tags-todo "-errands"
+     ("x" "Available at home" tags-todo "-errands-POLO"
       ((org-agenda-todo-ignore-scheduled
 	(quote future)))))))
  '(org-agenda-files

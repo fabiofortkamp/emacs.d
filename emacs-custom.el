@@ -110,9 +110,11 @@
    (quote
     ((13 . "\\cite{%l}")
      (111 . "\\citeonline{%l}")
-     (112 . "[@%l]")
-     (116 . "@%l")
-     (105 . "%l"))))
+     (91 . "[@%l]")
+     (64 . "@%l")
+     (105 . "%l")
+     (116 . "\\citet{%l}")
+     (112 . "\\citep{%l}"))))
  '(reftex-label-alist (quote ((nil 101 nil "\\autoref{%s}" nil nil))))
  '(reftex-ref-style-default-list (quote ("Default" "Hyperref")))
  '(safe-local-variable-values

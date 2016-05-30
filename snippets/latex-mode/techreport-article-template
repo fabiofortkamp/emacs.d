@@ -1,0 +1,63 @@
+# -*- mode: snippet -*-
+# name: techreport-article-template
+# key: techatemp
+# --
+\documentclass[article]{techreport}
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{$1}
+\autor{Fábio Pinto Fortkamp}
+\local{Florianópolis}
+\data{}
+\orientador{Prof. Jader Riso Barbosa, Jr.}
+
+
+% this configures PDF metadata with the above information
+\configurepdf
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+\usepackage{engsymbols}
+\usepackage{magref}
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+
+\maketitle
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+$0
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{refs/Thermo-Foam-Ref}
+
+
+
+\end{document}

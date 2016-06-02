@@ -119,7 +119,8 @@
  '(reftex-ref-style-default-list (quote ("Default" "Hyperref")))
  '(safe-local-variable-values
    (quote
-    ((TeX-command-default . LatexMk-Pnw)
+    ((TeX-command-default . LatexMk)
+     (TeX-command-default . LatexMk-Pnw)
      (engine . django))))
  '(show-paren-mode t)
  '(term-scroll-show-maximum-output t)

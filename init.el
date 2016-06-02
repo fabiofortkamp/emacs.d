@@ -57,6 +57,7 @@
     ein
     helm
     helm-bibtex
+    ahk-mode
     ))
 
 (mapc #'(lambda (package)
@@ -397,10 +398,6 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
       (set-face-font 'default "Consolas")
       (set-variable 'TeX-view-program-selection
 		      '((output-pdf "Sumatra")))
-      ; autohotkey
-      (setq ahk-syntax-directory "C:/Program Files (x86)/AutoHotkey/Extras/Editors/Syntax")
-      (add-to-list 'auto-mode-alist '("\\.ahk$" . ahk-mode))
-      (autoload 'ahk-mode "ahk-mode")
       ))
 
 ;; WEB-MODE

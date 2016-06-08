@@ -202,7 +202,7 @@ Title: %s
 Author: Fábio Fortkamp  
 Date: %s  
 Tags:  
-bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
+bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
 
 ---  
 
@@ -283,7 +283,8 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib]
 (setq bibtex-dir (expand-file-name "thermo-ref" home-dir))
 
 (setq reftex-default-bibliography (list (expand-file-name "Thermo-Foam-Ref.bib" bibtex-dir)
-				    (expand-file-name "non-fiction.bib" bibtex-dir)))
+					(expand-file-name "non-fiction.bib" bibtex-dir)
+					(expand-file-name "tech.bib" bibtex-dir)))
 				    
 
 (add-to-list 'load-path (expand-file-name "auctex-latexmk" dotfiles-dir))

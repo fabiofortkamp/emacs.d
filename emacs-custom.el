@@ -115,6 +115,9 @@
      (105 . "%l")
      (116 . "\\citet{%l}")
      (112 . "\\citep{%l}"))))
+ '(reftex-default-bibliography
+   (quote
+    ("c:/Users/Fabio/thermo-ref/Thermo-Foam-Ref.bib" "c:/Users/Fabio/thermo-ref/non-fiction.bib")))
  '(reftex-label-alist (quote ((nil 101 nil "\\autoref{%s}" nil nil))))
  '(reftex-ref-style-default-list (quote ("Default" "Hyperref")))
  '(safe-local-variable-values

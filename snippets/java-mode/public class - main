@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: public class - main
+# key: pcmain
+# --
+public class $1
+{
+   public static void main( String[] args )
+   {
+      $0
+   } // end method main
+} // end class $1

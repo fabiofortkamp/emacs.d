@@ -58,6 +58,8 @@
     helm
     helm-bibtex
     ahk-mode
+    java-snippets
+    jdee
     ))
 
 (mapc #'(lambda (package)

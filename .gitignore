@@ -16,3 +16,4 @@ lisp/auctex*
 lisp/preview-latex.el
 lisp/tex-site.el
 request/
+abbrev_defs

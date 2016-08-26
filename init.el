@@ -60,6 +60,7 @@
     ahk-mode
     java-snippets
     jdee
+    cdlatex
     ))
 
 (mapc #'(lambda (package)

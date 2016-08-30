@@ -67,6 +67,7 @@
  '(bibtex-autokey-prefix-string "bib:")
  '(bibtex-autokey-year-title-separator "_")
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(cdlatex-math-symbol-prefix 64)
  '(comment-empty-lines t)
  '(custom-safe-themes
    (quote

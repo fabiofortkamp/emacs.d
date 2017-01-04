@@ -425,7 +425,7 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
 ; make the first running instance of emacs a server
 (load "server")
 (setq server-socket-dir (expand-file-name "server" dotfiles-dir))
-(unless (server-running-p) (server-start))
+(server-start)
 
 ;; auto-complete
 (ac-config-default)

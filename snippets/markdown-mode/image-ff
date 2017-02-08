@@ -1,0 +1,7 @@
+# key: imff
+# name: image-ff
+# --
+
+<img src="$1" alt="$2"  width="500" style="margin-left:auto;margin-right:auto;display:block;">
+
+$0

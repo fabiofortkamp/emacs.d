@@ -124,8 +124,6 @@
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . markdown-mode))
 
 (markdown-enable-math)
-(add-hook 'markdown-mode-hook 'turn-on-cdlatex)
-
 
 ; taskpaper mode
 (load-file  (expand-file-name  "taskpaper.el" (expand-file-name "tpemacs" dotfiles-dir)) )

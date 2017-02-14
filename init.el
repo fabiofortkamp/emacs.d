@@ -509,4 +509,5 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
     (call-process "PDFXCview.exe"  nil 0 nil fpath-normalized)
     )
 )))
+
 ;;; init.el ends here

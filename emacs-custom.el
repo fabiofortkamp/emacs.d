@@ -106,7 +106,7 @@
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/"))))
- '(package-check-signature (quote allow-unsigned))
+ '(package-check-signature nil)
  '(reftex-cite-format
    (quote
     ((13 . "\\cite{%l}")

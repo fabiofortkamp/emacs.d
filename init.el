@@ -61,8 +61,6 @@
     java-snippets
     jdee
     cdlatex
-    latex-extra
-    latex-preview-pane
     magit
     ))
 
@@ -276,8 +274,6 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(add-hook 'LaTeX-mode-hook #'latex-extra-mode)
-;;(latex-preview-pane-enable)
 
 (setq TeX-PDF-mode t)
 

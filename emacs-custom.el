@@ -79,6 +79,8 @@
  '(elpy-rpc-timeout 10)
  '(fci-rule-color "#383838")
  '(inhibit-startup-screen t)
+ '(latex/cleanup-do-fill nil)
+ '(latex/should-auto-fill-$ nil)
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))

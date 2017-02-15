@@ -61,6 +61,9 @@
     java-snippets
     jdee
     cdlatex
+    latex-extra
+    latex-preview-pane
+    magit
     ))
 
 (mapc #'(lambda (package)
@@ -273,6 +276,8 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
 (setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(add-hook 'LaTeX-mode-hook #'latex-extra-mode)
+;;(latex-preview-pane-enable)
 
 (setq TeX-PDF-mode t)
 
@@ -509,5 +514,8 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
     (call-process "PDFXCview.exe"  nil 0 nil fpath-normalized)
     )
 )))
+
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;;; init.el ends here

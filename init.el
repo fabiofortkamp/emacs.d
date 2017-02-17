@@ -277,6 +277,8 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
 
 (setq TeX-PDF-mode t)
 
+
+
 (require 'reftex)
 (add-hook 'markdown-mode-hook 'turn-on-reftex)
 
@@ -294,6 +296,11 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
 (add-to-list 'load-path (expand-file-name "auctex-latexmk" dotfiles-dir))
 (require 'auctex-latexmk)
 (auctex-latexmk-setup)
+
+;; this is necessary to make LatexMk the default.
+;; we have to use the TeX-mode-hook because it seems this variable is reset when LaTeX-mode is loaded, so only the '(setq ...)' statament doen't work
+;; https://tex.stackexchange.com/questions/236329/auctexs-c-c-c-c-issue-with-latexmk
+(add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "LatexMk")))
 
 (eval-after-load "latex"
 '(define-key docTeX-mode-map (kbd "\C-c j") 'comment-indent-new-line))

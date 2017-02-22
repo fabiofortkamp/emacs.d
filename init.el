@@ -62,6 +62,7 @@
     jdee
     cdlatex
     magit
+    org
     ))
 
 (mapc #'(lambda (package)

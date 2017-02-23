@@ -343,6 +343,17 @@ bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
 (global-set-key (kbd "<f6>") 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+(setq org-directory (concat dropbox-dir "/notes"))
+(setq org-default-notes-file (concat org-directory "/inbox.org"))
+
+(setq org-capture-templates
+       '(
+	 ("n" "Note" entry (file+datetree "")
+	  "")
+	
+
+	))
+
 (defun thermo-emacs-open-dashboard()
   (interactive)
   (org-agenda "a" "d"))

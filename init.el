@@ -203,12 +203,12 @@
   (insert
    (format
   "---
-Title: %s  
-Author: Fábio Fortkamp  
-Date: %s  
-Tags:  
-bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
-
+title: %s  
+author: Fábio Fortkamp  
+date: %s  
+tags:  
+bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]  
+classoption: [brazil,english]  
 ---  
 
 "

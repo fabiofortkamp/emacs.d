@@ -1,0 +1,63 @@
+# -*- mode: snippet -*-
+# name: techreport-dtu-version
+# key: techdtu
+# --
+\documentclass[article, brazil,english]{techreport}
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{$1}
+\autor{Fábio Pinto Fortkamp}
+\local{Roskilde}
+\data{}
+
+
+% this configures PDF metadata with the above information
+\configurepdf
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+\usepackage{engsymbols}
+\usepackage{magref}
+
+\graphicspath{{./figures/}}
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+
+\maketitle
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+$0
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{refs/Thermo-Foam-Ref}
+
+
+
+\end{document}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: silatex
+# key: si
+# --
+\$$1 = \SI{$2}{$3}\$$0

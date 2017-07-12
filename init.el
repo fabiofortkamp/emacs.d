@@ -540,3 +540,4 @@ classoption: [brazil,english]
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;;; init.el ends here
+(put 'downcase-region 'disabled nil)

@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: basic_class_with_init
+# key: bc
+# --
+class ${1:ClassName}():
+    """
+    ${2:Documentation for $1}
+
+    """
+    def __init__(self${3:, args}):
+        
+        ${3:$(elpy-snippet-init-assignments yas-text)}
+        $0

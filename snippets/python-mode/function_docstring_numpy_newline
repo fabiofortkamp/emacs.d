@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: function_docstring_numpy_newline
+# key: def
+# group: definitions
+# --
+def ${1:name}($2):
+    \"\"\"
+    $3
+    ${2:$(python-args-to-docstring-numpy)}
+    \"\"\"
+    
+    $0

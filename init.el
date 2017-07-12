@@ -112,7 +112,13 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-
+; set the snippet expansion key to C-TAB
+; I'm experimenting a little bit with this, because TAB does many things:
+; indentation, auto-complete etc
+; So C-TAB will have an unique meaning: expand a snippet
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
 
 ;; NOTES
 

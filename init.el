@@ -131,7 +131,7 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . markdown-mode))
 
-(markdown-enable-math)
+(markdown-toggle-math)
 
 ; taskpaper mode
 (load-file  (expand-file-name  "taskpaper.el" (expand-file-name "tpemacs" dotfiles-dir)) )

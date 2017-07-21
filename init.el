@@ -63,6 +63,10 @@
     cdlatex
     magit
     org
+    solarized-theme
+    doom-themes
+    neotree
+    all-the-icons
     ))
 
 (mapc #'(lambda (package)
@@ -71,13 +75,19 @@
       myPackages)
 
 
-; I like the theme solarized, and this manual installation is the best option to me
-(add-to-list 'custom-theme-load-path (expand-file-name  "emacs-color-theme-solarized" dotfiles-dir))
-(add-to-list 'custom-theme-load-path (expand-file-name  "zenburn-emacs" dotfiles-dir))
+(require 'doom-themes)
 
-(load-theme 'solarized t)
+;; Global settings (defaults)
+(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+      doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-; right now I'm experimenting with zenburn
+;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
+;; may have their own settings.
+(load-theme 'doom-one t)
+
+;; Enable flashing mode-line on errors
+(doom-themes-visual-bell-config)
+
 
 ; enable upcase-region
 (put 'upcase-region 'disabled nil)

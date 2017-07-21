@@ -75,7 +75,7 @@
 (add-to-list 'custom-theme-load-path (expand-file-name  "emacs-color-theme-solarized" dotfiles-dir))
 (add-to-list 'custom-theme-load-path (expand-file-name  "zenburn-emacs" dotfiles-dir))
 
-(load-theme 'zenburn t)
+(load-theme 'solarized t)
 
 ; right now I'm experimenting with zenburn
 
@@ -346,7 +346,6 @@ classoption: [brazil,english]
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
-(global-set-key (kbd "<f6>") 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
 (setq org-directory (concat dropbox-dir "/notes"))
@@ -537,7 +536,7 @@ classoption: [brazil,english]
 )))
 
 ;; magit
-(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "<f6>") 'magit-status)
 
 ;;; init.el ends here
 (put 'downcase-region 'disabled nil)

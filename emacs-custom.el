@@ -71,7 +71,7 @@
  '(comment-empty-lines t)
  '(custom-safe-themes
    (quote
-    ("07dda9a3249f9ac909e7e0dc3c8876fd45898aa21646e093148dbd6ebb294f66" "f3d6a49e3f4491373028eda655231ec371d79d6d2a628f08d5aa38739340540b" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "1297a022df4228b81bc0436230f211bad168a117282c20ddcba2db8c6a200743" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("a6e5edd129bc48c9540ab6ed4a76a2e4e0da6359e981a3ec0bffbeb4416d4cc9" "611e38c2deae6dcda8c5ac9dd903a356c5de5b62477469133c89b2785eb7a14d" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "07dda9a3249f9ac909e7e0dc3c8876fd45898aa21646e093148dbd6ebb294f66" "f3d6a49e3f4491373028eda655231ec371d79d6d2a628f08d5aa38739340540b" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "1297a022df4228b81bc0436230f211bad168a117282c20ddcba2db8c6a200743" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(electric-indent-mode nil)
  '(elpy-modules
    (quote
@@ -79,6 +79,9 @@
  '(elpy-rpc-timeout 10)
  '(fci-rule-color "#383838")
  '(inhibit-startup-screen t)
+ '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
  '(latex/cleanup-do-fill nil)
  '(latex/should-auto-fill-$ nil)
  '(nrepl-message-colors
@@ -100,7 +103,11 @@
    (quote
     ("~/latex-writing/paper-analytical-halbach/notes.org" "~/Dropbox/notes/20160331121300 Energy magnetic fields.org" "~/Dropbox/notes/tasks/tasks.org")))
  '(org-agenda-tags-todo-honor-ignore-options t)
+ '(org-ellipsis "  ")
  '(org-export-backends (quote (ascii html icalendar latex md org)))
+ '(org-fontify-done-headline t)
+ '(org-fontify-quote-and-verse-blocks t)
+ '(org-fontify-whole-heading-line t)
  '(org-hide-leading-stars t)
  '(org-log-repeat nil)
  '(package-archives
@@ -158,4 +165,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "outline" :family "Ubuntu Mono")))))
+ '(default ((t (:inherit nil :stipple nil :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "outline" :family "Consolas")))))

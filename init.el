@@ -67,6 +67,9 @@
     doom-themes
     neotree
     all-the-icons
+    deft
+    markdown-mode
+    expand-region
     ))
 
 (mapc #'(lambda (package)
@@ -105,7 +108,6 @@
 ;; (setq ido-everywhere t)
 
 ; enable the expand-region package
-(add-to-list 'load-path (expand-file-name "expand-region.el" dotfiles-dir))
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
@@ -133,7 +135,6 @@
 ;; NOTES
 
 ; markdown mode
-(add-to-list 'load-path (expand-file-name "markdown-mode" dotfiles-dir))
 (require 'markdown-mode)
 (autoload 'markdown-mode "markdown-mode"
        "Major mode for editing Markdown files" t)
@@ -142,11 +143,6 @@
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . markdown-mode))
 
 (markdown-toggle-math)
-
-; taskpaper mode
-(load-file  (expand-file-name  "taskpaper.el" (expand-file-name "tpemacs" dotfiles-dir)) )
- (require 'taskpaper-mode)
-(add-to-list 'auto-mode-alist '("\\.taskpaper\\'" . taskpaper-mode))
 
 ; a macro to insert a markdown link snippet
 (fset 'yas-link-region
@@ -179,7 +175,6 @@
                              'thermo-emacs-markdown-enter-key)))
 
 ; deft-mode (notational-velocity)
-(add-to-list 'load-path (expand-file-name "deft" dotfiles-dir))
 (require 'deft)
 
 (setq deft-extensions '("txt" "org" "taskpaper" "md"))

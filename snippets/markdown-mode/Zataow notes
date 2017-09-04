@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: Zataow notes
+# key: zn      
+# --
+
+Index: [[20170601100509]]
+
+Module $1 of the [*Zen and The Art of Work* course][zataow] is about *$2*.
+
+$0
+
+[zataow]: http://www.zenandtheartofwork.com/
+
+[session]: https://www.evernote.com/shard/s92/nl/10280196/e12a6b8c-b603-40f0-9b30-44bc3a1e2b13
+
+[morning]: https://www.evernote.com/shard/s92/nl/10280196/1aa4bcfe-3e46-485b-b64b-f3d313613b8b
+
+[dashboard]: https://trello.com/b/1itFLWDj/dashboard

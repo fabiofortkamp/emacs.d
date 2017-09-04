@@ -204,6 +204,9 @@
   (setq zettel-title
         (read-string "Note title: "))
 
+  (setq zettel-tags
+        (read-string "Tags (comma-separated): "))
+
   (setq zettel-id (format-time-string "%Y%m%d%H%M%S"))
 
   (setq zettel-file-name 
@@ -217,7 +220,7 @@
 title: %s  
 author: Fábio Fortkamp  
 date: %s  
-tags:  
+tags: [%s]  
 bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]  
 classoption: [brazil,english]  
 ---  
@@ -225,6 +228,7 @@ classoption: [brazil,english]
 "
   zettel-title
   (format-time-string "%Y-%m-%d")
+  zettel-tags
   )
   )
 

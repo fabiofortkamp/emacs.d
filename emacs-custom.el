@@ -65,6 +65,7 @@
  '(ansi-color-names-vector
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(bibtex-autokey-prefix-string "bib:")
+ '(bibtex-autokey-titleword-separator "-")
  '(bibtex-autokey-year-title-separator "_")
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(cdlatex-math-symbol-prefix 64)

@@ -116,6 +116,9 @@
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-check-signature nil)
+ '(package-selected-packages
+   (quote
+    (auctex yaml-mode elpy auto-complete exec-path-from-shell yasnippet pandoc-mode)))
  '(reftex-cite-format
    (quote
     ((13 . "\\cite{%l}")

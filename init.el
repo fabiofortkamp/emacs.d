@@ -414,6 +414,7 @@ classoption: [brazil,english]
 (if (eq system-type 'darwin)
     (progn
       (exec-path-from-shell-initialize)
+       (set-face-font 'default "Monaco")
       (set-variable 'TeX-view-program-selection
                       '((output-pdf "Split-Skim")))
       (defadvice yes-or-no-p (around prevent-dialog activate)

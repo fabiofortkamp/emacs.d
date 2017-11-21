@@ -416,7 +416,7 @@ classoption: [brazil,english]
       (exec-path-from-shell-initialize)
        (set-face-font 'default "Monaco")
       (set-variable 'TeX-view-program-selection
-                      '((output-pdf "Split-Skim")))
+                      '((output-pdf "Skim")))
       (defadvice yes-or-no-p (around prevent-dialog activate)
 	"Prevent yes-or-no-p from activating a dialog"
 	(let ((use-dialog-box nil))

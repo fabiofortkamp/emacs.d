@@ -427,6 +427,7 @@ classoption: [brazil,english]
 	(let ((use-dialog-box nil))
 	  ad-do-it))
       (setenv "TMPDIR" "/tmp")
+      (deft-setup)
       ))
 
 
@@ -551,4 +552,3 @@ classoption: [brazil,english]
 
 (put 'downcase-region 'disabled nil)
 
-(deft-setup)

@@ -177,6 +177,7 @@
 ; deft-mode (notational-velocity)
 (require 'deft)
 
+
 (setq deft-extensions '("txt" "org" "taskpaper" "md"))
 (setq deft-default-extension "md")
 (setq deft-directory (expand-file-name "notes" dropbox-dir))
@@ -548,5 +549,6 @@ classoption: [brazil,english]
 ;; magit
 (global-set-key (kbd "<f6>") 'magit-status)
 
-;;; init.el ends here
 (put 'downcase-region 'disabled nil)
+
+(deft-setup)

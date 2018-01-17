@@ -469,7 +469,9 @@ classoption: [brazil,english]
 ;; PYTHON
 (elpy-enable)
 
-(elpy-use-ipython)
+
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
 
 (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 79)))
 
@@ -550,5 +552,3 @@ classoption: [brazil,english]
 (global-set-key (kbd "<f6>") 'magit-status)
 
 (put 'downcase-region 'disabled nil)
-
-(deft-setup)

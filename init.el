@@ -277,7 +277,28 @@ classoption: [brazil,english]
         )
       )
 
+(defun zettel-to-latex ()
+  "Export text from buffer or selected region as LaTeX to clipboard"
+  (interactive)
+  (let (
+	(start (if (region-active-p) (region-beginning) (point-min)))
+	(end (if (region-active-p) (region-end) (point-max)))
+	(created-buffer-name "*Zettel-to-LaTeX output*")
+
+	)
+    (progn
+      (shell-command-on-region start end "pandoc --from=markdown+raw_tex --to=latex --top-level-division=chapter --natbib" created-buffer-name)
+  ; save output from above to string and save it to clipboard
+      (with-current-buffer created-buffer-name
+	(kill-ring-save (point-min) (point-max))
+	)
+      (kill-buffer created-buffer-name)
+      )
+  )
+  )
+
 (define-key markdown-mode-map (kbd "C-c k") 'thermo-emacs-copy-zettel-id)
+(define-key markdown-mode-map (kbd "C-c p") 'zettel-to-latex)
 
 
 ;; LATEX
@@ -470,7 +491,9 @@ classoption: [brazil,english]
 ;; PYTHON
 (elpy-enable)
 
-(elpy-use-ipython)
+
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
 
 (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 79)))
 

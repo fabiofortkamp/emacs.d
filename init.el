@@ -51,7 +51,6 @@
     elpy
     yaml-mode
     auctex
-    column-marker
     polymode
     ess
     ein
@@ -94,10 +93,6 @@
 
 ; enable upcase-region
 (put 'upcase-region 'disabled nil)
-
-; highlight the 80-th column
-(require 'column-marker)
-
 
 ;; MINOR PACKAGES
 
@@ -494,8 +489,6 @@ classoption: [brazil,english]
 
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "-i --simple-prompt")
-
-(add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 79)))
 
 ;; Polymode
 

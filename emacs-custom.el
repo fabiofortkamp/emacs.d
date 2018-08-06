@@ -58,7 +58,7 @@
      ("Sumatra"
       ("SumatraPDF.exe -reuse-instance"
        (mode-io-correlate " -forward-search %b %n")
-       " %o"))
+       " %(pdf-file-name)"))
      ("Preview" "open %o -a Preview")
      ("PDF-XChange" "PDFXCview.exe %o")
      ("Split-Skim" "osascript ~/code/splitskim/splitskim.applescript %n %(pdf-file-name) %b \"Emacs + Skim\""))))
@@ -118,7 +118,7 @@
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (auctex yaml-mode elpy auto-complete exec-path-from-shell yasnippet pandoc-mode)))
+    (yaml-mode solarized-theme polymode pandoc-mode neotree markdown-mode magit julia-mode jdee java-snippets helm-bibtex font-lock+ expand-region exec-path-from-shell ess elpy ein doom-themes deft column-marker cdlatex auctex ahk-mode)))
  '(reftex-cite-format
    (quote
     ((13 . "\\cite{%l}")

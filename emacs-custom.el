@@ -114,11 +114,11 @@
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "http://melpa.org/packages/"))))
+     ("melpa" . "https://melpa.org/packages/"))))
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (yaml-mode solarized-theme polymode pandoc-mode neotree markdown-mode magit julia-mode jdee java-snippets helm-bibtex font-lock+ expand-region exec-path-from-shell ess elpy ein doom-themes deft column-marker cdlatex auctex ahk-mode)))
+    (yaml-mode solarized-theme polymode pandoc-mode neotree markdown-mode magit julia-mode jdee java-snippets helm-bibtex font-lock+ expand-region exec-path-from-shell ess elpy ein doom-themes column-marker cdlatex auctex ahk-mode)))
  '(reftex-cite-format
    (quote
     ((13 . "\\cite{%l}")

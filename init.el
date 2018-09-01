@@ -51,13 +51,8 @@
     elpy
     yaml-mode
     auctex
-    polymode
-    ess
-    ein
     helm
     helm-bibtex
-    ahk-mode
-    java-snippets
     jdee
     cdlatex
     magit
@@ -443,7 +438,7 @@ classoption: [brazil,english]
 	(let ((use-dialog-box nil))
 	  ad-do-it))
       (setenv "TMPDIR" "/tmp")
-      (deft-setup)
+      ;; (deft-setup)
       ))
 
 
@@ -490,32 +485,6 @@ classoption: [brazil,english]
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "-i --simple-prompt")
 
-;; Polymode
-
-(require 'polymode)
-
-(defcustom  pm-inner/pweave
-  (pm-hbtchunkmode "pweave"
-                   :head-reg "^[ \t]*<<\\(.*\\)>>=\\|<%"
-                   :tail-reg "^[ \t]*@ *\\( %def .*\\)?$\\|%>"
-		   :mode 'python-mode)
-
-  "Pweave chunk."
-  :group 'innermodes
-  :type 'object)
-
-(defcustom pm-poly/pweave
-  (pm-polymode-one "pweave"
-                   :hostmode 'pm-host/latex
-                   :innermode 'pm-inner/pweave
-)
-  "Pweave configuration"
-  :group 'polymodes
-  :type 'object)
-
-(define-polymode poly-pweave-mode pm-poly/pweave :lighter " Pweave")
-
-(add-to-list 'auto-mode-alist '("\\.Pnw" . poly-pweave-mode))
 
 ;; helm
 

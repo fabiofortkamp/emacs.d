@@ -118,7 +118,7 @@
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (yaml-mode solarized-theme polymode pandoc-mode neotree markdown-mode magit julia-mode jdee java-snippets helm-bibtex font-lock+ expand-region exec-path-from-shell ess elpy ein doom-themes column-marker cdlatex auctex ahk-mode)))
+    (leuven-theme spacemacs-theme yaml-mode solarized-theme polymode pandoc-mode neotree markdown-mode magit julia-mode jdee java-snippets helm-bibtex font-lock+ expand-region exec-path-from-shell ess elpy ein doom-themes column-marker cdlatex auctex ahk-mode)))
  '(reftex-cite-format
    (quote
     ((13 . "\\cite{%l}")
@@ -169,4 +169,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "outline" :family "Consolas")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Monaco")))))

@@ -518,3 +518,18 @@ classoption: [brazil,english]
 
 (put 'downcase-region 'disabled nil)
 
+;; kill-word at point
+;; stolen from https://stackoverflow.com/questions/33442027/how-to-deleteor-kill-the-current-word-in-emacs
+(defun my-kill-thing-at-point (thing)
+  "Kill the `thing-at-point' for the specified kind of THING."
+  (let ((bounds (bounds-of-thing-at-point thing)))
+    (if bounds
+        (kill-region (car bounds) (cdr bounds))
+      (error "No %s at point" thing))))
+
+(defun my-kill-word-at-point ()
+  "Kill the word at point."
+  (interactive)
+  (my-kill-thing-at-point 'word))
+
+(global-set-key (kbd "C-c C-w") 'my-kill-word-at-point)

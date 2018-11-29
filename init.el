@@ -64,6 +64,7 @@
     deft
     markdown-mode
     expand-region
+    leuven-theme
     ))
 
 (mapc #'(lambda (package)
@@ -181,7 +182,7 @@
 
   (setq zettel-id (format-time-string "%Y%m%d%H%M%S"))
 
-  (setq zettel-file-name 
+  (setq zettel-file-name
 	(expand-file-name (concat zettel-id " " zettel-title "." deft-default-extension) deft-directory))
 
   (find-file zettel-file-name)
@@ -189,13 +190,13 @@
   (insert
    (format
   "---
-title: %s  
-author: Fábio Fortkamp  
-date: %s  
-tags: [%s]  
-bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]  
-classoption: [brazil,english]  
----  
+title: %s
+author: Fábio Fortkamp
+date: %s
+tags: [%s]
+bibliography: [non-fiction.bib, Thermo-Foam-Ref.bib, tech.bib]
+classoption: [brazil,english]
+---
 
 "
   zettel-title
@@ -243,7 +244,7 @@ classoption: [brazil,english]
             (progn
               (kill-new zettel-id)
               (message "Zettel ID copied"))
-            
+
           )
         )
       )
@@ -300,7 +301,7 @@ classoption: [brazil,english]
 (setq reftex-default-bibliography (list (expand-file-name "Thermo-Foam-Ref.bib" bibtex-dir)
 					(expand-file-name "non-fiction.bib" bibtex-dir)
 					(expand-file-name "tech.bib" bibtex-dir)))
-				    
+
 
 (add-to-list 'load-path (expand-file-name "auctex-latexmk" dotfiles-dir))
 (require 'auctex-latexmk)
@@ -337,7 +338,7 @@ classoption: [brazil,english]
 
 ; enable reftex mode in org-mode
 (defun org-mode-reftex-setup ()
-  (load-library "reftex") 
+  (load-library "reftex")
   (and (buffer-file-name)
   (file-exists-p (buffer-file-name))
   (reftex-parse-all))
@@ -357,7 +358,7 @@ classoption: [brazil,english]
        '(
 	 ("n" "Note" entry (file+datetree "")
 	  "")
-	
+
 
 	))
 
@@ -493,7 +494,7 @@ classoption: [brazil,english]
       )
 
 ; this means pressing b after helm-command-prefix to access helm-bibtex
-(define-key helm-command-map (kbd "b")  'helm-bibtex) 
+(define-key helm-command-map (kbd "b")  'helm-bibtex)
 
 (setq bibtex-completion-pdf-field "File")
 

@@ -72,7 +72,7 @@
       (package-install package)))
       myPackages)
 
-(load-theme 'leuven t)
+(load-theme 'zenburn t)
 
 ; enable upcase-region
 (put 'upcase-region 'disabled nil)

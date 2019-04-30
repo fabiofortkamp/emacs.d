@@ -65,6 +65,7 @@
     markdown-mode
     expand-region
     leuven-theme
+    zenburn-theme
     ))
 
 (mapc #'(lambda (package)

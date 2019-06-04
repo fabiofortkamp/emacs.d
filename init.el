@@ -114,9 +114,6 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 
-
-(markdown-toggle-math)
-
 ; a macro to insert a markdown link snippet
 (fset 'yas-link-region
    [?\C-w ?l ?i ?n ?k C-tab ?\C-y tab])

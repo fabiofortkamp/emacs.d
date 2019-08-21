@@ -66,6 +66,7 @@
     expand-region
     leuven-theme
     zenburn-theme
+    nord-theme
     ))
 
 (mapc #'(lambda (package)
@@ -73,7 +74,7 @@
       (package-install package)))
       myPackages)
 
-(load-theme 'zenburn t)
+(load-theme 'nord t)
 
 ; enable upcase-region
 (put 'upcase-region 'disabled nil)
@@ -418,8 +419,7 @@ classoption: [brazil,english]
 	(let ((use-dialog-box nil))
 	  ad-do-it))
       (setenv "TMPDIR" "/tmp")
-      ;; (deft-setup)
-      ))
+       ))
 
 
 

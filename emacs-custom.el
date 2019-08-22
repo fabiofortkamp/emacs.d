@@ -120,7 +120,7 @@
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (zenburn-theme leuven-theme spacemacs-theme yaml-mode solarized-theme polymode pandoc-mode neotree markdown-mode magit julia-mode jdee java-snippets helm-bibtex font-lock+ expand-region exec-path-from-shell ess elpy ein doom-themes column-marker cdlatex auctex ahk-mode)))
+    (nord-theme zenburn-theme leuven-theme spacemacs-theme yaml-mode solarized-theme polymode pandoc-mode neotree markdown-mode magit julia-mode jdee java-snippets helm-bibtex font-lock+ expand-region exec-path-from-shell ess elpy ein doom-themes column-marker cdlatex auctex ahk-mode)))
  '(reftex-cite-format
    (quote
     ((13 . "\\cite{%l}")

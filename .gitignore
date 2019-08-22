@@ -18,3 +18,5 @@ lisp/tex-site.el
 request/
 abbrev_defs
 transient/
+url/
+

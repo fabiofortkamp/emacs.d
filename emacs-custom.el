@@ -85,6 +85,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
  '(latex/cleanup-do-fill nil)
  '(latex/should-auto-fill-$ nil)
+ '(markdown-command "pandoc -f markdown")
  '(markdown-enable-math t)
  '(nrepl-message-colors
    (quote

@@ -74,7 +74,7 @@
       (package-install package)))
       myPackages)
 
-(load-theme 'nord t)
+(load-theme 'solarized-light t)
 
 ; enable upcase-region
 (put 'upcase-region 'disabled nil)
@@ -407,7 +407,7 @@ classoption: [brazil,english]
 (if (eq system-type 'darwin)
     (progn
       (exec-path-from-shell-initialize)
-       (set-face-font 'default "Monaco")
+       (set-face-font 'default "JetBrains Mono")
       (set-variable 'TeX-view-program-selection
                       '((output-pdf "Skim")))
       (defadvice yes-or-no-p (around prevent-dialog activate)
